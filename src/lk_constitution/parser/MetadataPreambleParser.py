@@ -9,7 +9,8 @@ from .Constants import _PARA_SPLITS
 
 def parse_metadata(text: str) -> dict[str, str]:
     title = (
-        "The Constitution of the Democratic Socialist" " Republic of Sri Lanka"
+        "The Constitution of the Democratic Socialist"
+        " Republic of Sri Lanka"
     )
     edition = ""
     if m := re.search(r"Revised Edition\s*[–\-]\s*(\d{4})", text):

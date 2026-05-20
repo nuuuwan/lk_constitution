@@ -2,12 +2,7 @@ from __future__ import annotations
 
 from ..core import Chapter, Footnote
 from .ArticleParser import parse_articles
-from .Constants import (
-    _AMEND_REF_RE,
-    _ARTICLE_RE,
-    _BODY_END_RE,
-    _CHAPTER_RE,
-)
+from .Constants import _AMEND_REF_RE, _ARTICLE_RE, _BODY_END_RE, _CHAPTER_RE
 from .TextUtils import _cleaned_lines, _decimal_chapter_num
 
 

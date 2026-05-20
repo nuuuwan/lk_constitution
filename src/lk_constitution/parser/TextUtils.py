@@ -5,12 +5,8 @@ import re
 from pathlib import Path
 
 from ..core import Clause, Footnote
-from .Constants import (
-    _ALPHA_CLAUSE_RE,
-    _NOISE_PATTERNS,
-    _NUM_CLAUSE_RE,
-    _ROMAN_VALUES,
-)
+from .Constants import (_ALPHA_CLAUSE_RE, _NOISE_PATTERNS, _NUM_CLAUSE_RE,
+                        _ROMAN_VALUES)
 
 
 def _roman_to_int(s: str) -> int:
@@ -67,7 +63,9 @@ def _parse_footnote_lines(lines: list[str]) -> list[Footnote]:
     result: list[Footnote] = []
     for ln in lines:
         if m := re.match(r"^(\d+)\s*[-\u2013]\s*(.+)$", ln):
-            result.append(Footnote(marker=m.group(1), text=m.group(2).strip()))
+            result.append(
+                Footnote(marker=m.group(1), text=m.group(2).strip())
+            )
     return result
 
 

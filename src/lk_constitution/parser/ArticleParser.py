@@ -3,13 +3,8 @@ from __future__ import annotations
 import re
 
 from ..core import Article, Footnote
-from .Constants import (
-    _ALPHA_CLAUSE_RE,
-    _AMEND_REF_RE,
-    _ARTICLE_RE,
-    _FOOTNOTE_RE,
-    _NUM_CLAUSE_RE,
-)
+from .Constants import (_ALPHA_CLAUSE_RE, _AMEND_REF_RE, _ARTICLE_RE,
+                        _FOOTNOTE_RE, _NUM_CLAUSE_RE)
 from .FootnoteUtils import match_article_footnotes
 from .TextUtils import _parse_clauses
 
@@ -50,7 +45,7 @@ def _parse_article_block(
         return None
     art_number = m.group("num")
     description = marginalia.get(art_number) or None
-    first_content = first_line[m.end() :].strip()
+    first_content = first_line[m.end():].strip()
     content_parts: list[str] = [first_content]
     for _, ln in lines[1:]:
         if not _FOOTNOTE_RE.match(ln):

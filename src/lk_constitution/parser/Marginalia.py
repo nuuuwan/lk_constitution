@@ -5,15 +5,9 @@ from pathlib import Path
 
 import pdfplumber
 
-from .Constants import (
-    _ART_NUM_WORD_RE,
-    _ART_X_EVEN,
-    _ART_X_ODD,
-    _MARGIN_X_EVEN,
-    _MARGIN_X_ODD,
-    _PAGE_FOOTER_TOP,
-    _PAGE_HEADER_BOTTOM,
-)
+from .Constants import (_ART_NUM_WORD_RE, _ART_X_EVEN, _ART_X_ODD,
+                        _MARGIN_X_EVEN, _MARGIN_X_ODD, _PAGE_FOOTER_TOP,
+                        _PAGE_HEADER_BOTTOM)
 
 
 def build_marginalia_map(pdf_path: Path) -> dict[str, str]:
