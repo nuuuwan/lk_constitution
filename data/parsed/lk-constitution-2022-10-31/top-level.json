@@ -4,6 +4,162 @@
   "amended_up_to": "2022-10-31",
   "last_amendment": "Twenty First Amendment",
   "published_by": "Parliament Secretariat",
-  "chapters": [],
+  "chapters": [
+    {
+      "number": "I",
+      "title": "THE PEOPLE, THE STATE AND SOVEREIGNTY",
+      "file": "chapter-I.json"
+    },
+    {
+      "number": "II",
+      "title": "BUDDHISM",
+      "file": "chapter-II.json"
+    },
+    {
+      "number": "III",
+      "title": "FUNDAMENTAL RIGHTS",
+      "file": "chapter-III.json"
+    },
+    {
+      "number": "IV",
+      "title": "LANGUAGE",
+      "file": "chapter-IV.json"
+    },
+    {
+      "number": "V",
+      "title": "CITIZENSHIP",
+      "file": "chapter-V.json"
+    },
+    {
+      "number": "VI",
+      "title": "DIRECTIVE PRINCIPLES OF STATE POLICY AND FUNDAMENTAL DUTIES",
+      "file": "chapter-VI.json"
+    },
+    {
+      "number": "VII",
+      "title": "THE EXECUTIVE The President of the Republic",
+      "file": "chapter-VII.json"
+    },
+    {
+      "number": "VIIA",
+      "title": "THE CONSTITUTIONAL COUNCIL",
+      "file": "chapter-VIIA.json"
+    },
+    {
+      "number": "VIII",
+      "title": "THE EXECUTIVE The Cabinet of Ministers",
+      "file": "chapter-VIII.json"
+    },
+    {
+      "number": "IX",
+      "title": "THE EXECUTIVE The Public Service",
+      "file": "chapter-IX.json"
+    },
+    {
+      "number": "X",
+      "title": "THE LEGISLATURE Parliament",
+      "file": "chapter-X.json"
+    },
+    {
+      "number": "XI",
+      "title": "THE LEGISLATURE Procedure and Powers",
+      "file": "chapter-XI.json"
+    },
+    {
+      "number": "XII",
+      "title": "THE LEGISLATURE Amendment of the Constitution",
+      "file": "chapter-XII.json"
+    },
+    {
+      "number": "XIII",
+      "title": "THE REFERENDUM",
+      "file": "chapter-XIII.json"
+    },
+    {
+      "number": "XIV",
+      "title": "THE FRANCHISE AND ELECTIONS",
+      "file": "chapter-XIV.json"
+    },
+    {
+      "number": "XIVA",
+      "title": "ELECTION COMMISSION",
+      "file": "chapter-XIVA.json"
+    },
+    {
+      "number": "XV",
+      "title": "THE JUDICIARY",
+      "file": "chapter-XV.json"
+    },
+    {
+      "number": "XVA",
+      "title": "JUDICIAL SERVICE COMMISSION",
+      "file": "chapter-XVA.json"
+    },
+    {
+      "number": "XVI",
+      "title": "THE SUPERIOR COURTS The Supreme Court General",
+      "file": "chapter-XVI.json"
+    },
+    {
+      "number": "XVII",
+      "title": "FINANCE",
+      "file": "chapter-XVII.json"
+    },
+    {
+      "number": "XVIIA",
+      "title": "",
+      "file": "chapter-XVIIA.json"
+    },
+    {
+      "number": "XVIII",
+      "title": "PUBLIC SECURITY",
+      "file": "chapter-XVIII.json"
+    },
+    {
+      "number": "XVIIIA",
+      "title": "NATIONAL POLICE COMMISSION",
+      "file": "chapter-XVIIIA.json"
+    },
+    {
+      "number": "XIX",
+      "title": "THE PARLIAMENTARY COMMISSIONER FOR ADMINISTRATION",
+      "file": "chapter-XIX.json"
+    },
+    {
+      "number": "XIXA",
+      "title": "Commission to Investigate Allegations of Bribery or Corruption",
+      "file": "chapter-XIXA.json"
+    },
+    {
+      "number": "XIXB",
+      "title": "National Procurement Commission",
+      "file": "chapter-XIXB.json"
+    },
+    {
+      "number": "XX",
+      "title": "GENERAL",
+      "file": "chapter-XX.json"
+    },
+    {
+      "number": "XXI",
+      "title": "TRANSITIONAL PROVISIONS",
+      "file": "chapter-XXI.json"
+    },
+    {
+      "number": "XXII",
+      "title": "INTERPRETATION",
+      "file": "chapter-XXII.json"
+    },
+    {
+      "number": "XXIII",
+      "title": "REPEAL",
+      "file": "chapter-XXIII.json"
+    },
+    {
+      "number": "XXIV",
+      "title": "PROMULGATION OF THE CONSTITUTION",
+      "file": "chapter-XXIV.json"
+    }
+  ],
   "schedules": []
 }

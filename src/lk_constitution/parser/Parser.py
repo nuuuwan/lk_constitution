@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pdfplumber
 
-from ..core import Constitution, Preamble
+from ..core import Article, Chapter, Clause, Constitution, Footnote, Preamble
 
 _PDF_PATH = Path("data/original_data/constitution.pdf")
 _OUTPUT_DIR = Path("data/parsed")
@@ -30,6 +30,32 @@ _PARA_SPLITS = [
     re.compile(r"(?<=:)\s+(?=WE,\s)"),
     re.compile(r",\s+(?=do hereby adopt and enact)"),
 ]
+
+# Chapter / article structure patterns
+# Matches: [optional amendment_ref][CHAPTER [ROMAN][optional letter suffix]
+_CHAPTER_RE = re.compile(
+    r"^(?:\d+\[)?CHAPTER\s+([IVXLC]+)\s*([A-Z])?\s*\]?$"
+)
+# Matches: [optional amendment_ref[optional words]] article_number.
+# Handles cases like "16[30.", "28[Powers 33.", "106[Constitution 111D.",
+# and left-margin marginalia prefixes like "Freedom of 10.", "Citizenship 26."
+_ARTICLE_RE = re.compile(
+    r"^(?:(?:\d+\[)?(?:[A-Za-z][A-Za-z]*(?: [A-Za-z][A-Za-z]*){0,3})?\s*)?(?P<num>\d+[A-Z]?)\.[\s\u00a0]+"
+)
+# Footnote lines: "16 - Substituted by the..."
+_FOOTNOTE_RE = re.compile(
+    r"^\d+\s*[-\u2013]\s*(?:Substituted|Inserted|Repealed|Added|Amended"
+    r"|Omitted|Deleted|Replaced)",
+    re.IGNORECASE,
+)
+# Strip editorial amendment brackets from article/clause text
+_AMEND_REF_RE = re.compile(r"\d+\[|\]")
+# Top-level numeric clause marker: (1), (2), ... (99)
+_NUM_CLAUSE_RE = re.compile(r"\(([1-9][0-9]?)\)\s+")
+# Top-level alpha clause marker: (a)-(h) — avoid (i)/(v)/(x) (Roman numerals)
+_ALPHA_CLAUSE_RE = re.compile(r"\(([a-hj-uw-z])\)\s+")
+# Signals that the main constitution body has ended (schedules / appendix follow)
+_BODY_END_RE = re.compile(r"Other Consequential Amendments", re.IGNORECASE)
 
 
 def _is_noise(line: str) -> bool:
@@ -160,6 +186,174 @@ class Parser:
         )
 
     # ------------------------------------------------------------------
+    # Chapters
+    # ------------------------------------------------------------------
+
+    def _cleaned_lines(self, pages: list[tuple[int, str]]) -> list[tuple[int, str]]:
+        """Return [(page_num, line), ...] with header/footer noise stripped."""
+        result: list[tuple[int, str]] = []
+        for page_num, text in pages:
+            for raw in text.splitlines():
+                s = raw.strip()
+                if not s or _is_noise(s):
+                    continue
+                # PDF sometimes renders the digit "1" as lowercase "l" at the
+                # start of article numbers (e.g. "l28." → "128.")
+                s = re.sub(r"^l(\d+\.)(\s)", r"1\1\2", s)
+                result.append((page_num, s))
+        return result
+
+    def _parse_chapters(self, pages: list[tuple[int, str]]) -> list[Chapter]:
+        lines = self._cleaned_lines(pages)
+
+        # Find where chapters actually begin so the TOC doesn't interfere
+        chapter_body_start = next(
+            (i for i, (_, ln) in enumerate(lines) if _CHAPTER_RE.match(ln)), 0
+        )
+
+        # Truncate at the appendix marker, but only within the chapter body
+        for cut, (_, ln) in enumerate(
+            lines[chapter_body_start:], chapter_body_start
+        ):
+            if _BODY_END_RE.search(ln):
+                lines = lines[:cut]
+                break
+
+        chapter_starts = [
+            i for i, (_, ln) in enumerate(lines) if _CHAPTER_RE.match(ln)
+        ]
+        chapters: list[Chapter] = []
+        for ci, start in enumerate(chapter_starts):
+            end = (
+                chapter_starts[ci + 1]
+                if ci + 1 < len(chapter_starts)
+                else len(lines)
+            )
+            chapter = self._parse_chapter_block(lines[start:end])
+            if chapter:
+                chapters.append(chapter)
+        return chapters
+
+    def _parse_chapter_block(
+        self, lines: list[tuple[int, str]]
+    ) -> Chapter | None:
+        if not lines:
+            return None
+        page_num, chapter_line = lines[0]
+        m = _CHAPTER_RE.match(chapter_line)
+        if not m:
+            return None
+
+        numeral = m.group(1).upper()
+        suffix = (m.group(2) or "").strip()
+        chapter_number = numeral + suffix  # e.g. "I", "VIIA", "XIXB"
+
+        # Collect title lines: everything after the chapter header until first article
+        title_lines: list[str] = []
+        article_start = len(lines)
+        for i in range(1, len(lines)):
+            if _ARTICLE_RE.match(lines[i][1]):
+                article_start = i
+                break
+            title_lines.append(lines[i][1])
+
+        title = _AMEND_REF_RE.sub("", " ".join(title_lines)).strip()
+
+        articles = self._parse_articles(lines[article_start:])
+        return Chapter(
+            number=chapter_number,
+            title=title,
+            articles=articles,
+            original_doc_page_num=page_num,
+        )
+
+    def _parse_articles(
+        self, lines: list[tuple[int, str]]
+    ) -> list[Article]:
+        article_starts = [
+            i for i, (_, ln) in enumerate(lines) if _ARTICLE_RE.match(ln)
+        ]
+        articles: list[Article] = []
+        for ai, start in enumerate(article_starts):
+            end = (
+                article_starts[ai + 1]
+                if ai + 1 < len(article_starts)
+                else len(lines)
+            )
+            art = self._parse_article_block(lines[start:end])
+            if art:
+                articles.append(art)
+        return articles
+
+    def _parse_article_block(
+        self, lines: list[tuple[int, str]]
+    ) -> Article | None:
+        if not lines:
+            return None
+        page_num, first_line = lines[0]
+        m = _ARTICLE_RE.match(first_line)
+        if not m:
+            return None
+
+        art_number = m.group("num")
+
+        # Content of the first line starts after the matched article-number prefix
+        first_content = first_line[m.end():].strip()
+
+        # Separate footnote lines from content lines (remaining lines after first)
+        content_parts: list[str] = [first_content]
+        raw_footnotes: list[str] = []
+        for _, ln in lines[1:]:
+            if _FOOTNOTE_RE.match(ln):
+                raw_footnotes.append(ln)
+            else:
+                content_parts.append(ln)
+
+        # Build cleaned flat text — strip editorial amendment brackets
+        raw = _AMEND_REF_RE.sub("", " ".join(content_parts))
+        raw = re.sub(r"\s{2,}", " ", raw).strip()
+
+        footnotes = _parse_footnote_lines(raw_footnotes)
+
+        # Repealed article: entire content is just a Repealed marker
+        if re.fullmatch(r"\[?Repealed\]?\.?", raw.strip(), re.IGNORECASE):
+            return Article(
+                number=art_number,
+                title=None,
+                text=None,
+                repealed=True,
+                footnotes=footnotes,
+                original_doc_page_num=page_num,
+            )
+
+        clauses = _parse_clauses(raw)
+        if clauses:
+            # If there's text before the first clause marker, put it in the intro
+            # by checking what's before the first (1)/(a) in the raw text
+            first_clause_match = (
+                _NUM_CLAUSE_RE.search(raw)
+                if _NUM_CLAUSE_RE.search(raw)
+                else _ALPHA_CLAUSE_RE.search(raw)
+            )
+            intro = raw[: first_clause_match.start()].strip() if first_clause_match else None
+            return Article(
+                number=art_number,
+                title=None,
+                text=intro or None,
+                clauses=clauses,
+                footnotes=footnotes,
+                original_doc_page_num=page_num,
+            )
+
+        return Article(
+            number=art_number,
+            title=None,
+            text=raw,
+            footnotes=footnotes,
+            original_doc_page_num=page_num,
+        )
+
+    # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
 
@@ -168,6 +362,7 @@ class Parser:
         full_text = "\n".join(t for _, t in pages)
         meta = self._parse_metadata(full_text)
         preamble = self._parse_preamble(pages)
+        chapters = self._parse_chapters(pages)
         return Constitution(
             title=meta["title"],
             edition=meta["edition"],
@@ -175,6 +370,7 @@ class Parser:
             last_amendment=meta["last_amendment"],
             published_by=meta["published_by"],
             preamble=preamble,
+            chapters=chapters,
         )
 
     def write(
@@ -232,31 +428,39 @@ class Parser:
 
 
 # ------------------------------------------------------------------
-# Helper
+# Module-level helpers
 # ------------------------------------------------------------------
 
 
-def _write_json(path: Path, data: object) -> None:
-    path.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
+def _parse_clauses(text: str) -> list[Clause]:
+    """Split article text into top-level Clause objects.
+
+    Tries numeric (1),(2),... first; falls back to alpha (a),(b),... (a-h range).
+    Returns [] when no clause markers are present.
+    """
+    if _NUM_CLAUSE_RE.search(text):
+        pattern = _NUM_CLAUSE_RE
+    elif _ALPHA_CLAUSE_RE.search(text):
+        pattern = _ALPHA_CLAUSE_RE
+    else:
+        return []
+
+    parts = pattern.split(text)
+    # re.split with a capture group gives:
+    # [before_first, label1, text1, label2, text2, ...]
+    return [
+        Clause(label=f"({parts[i]})", text=parts[i + 1].strip())
+        for i in range(1, len(parts), 2)
+        if i + 1 < len(parts)
+    ]
 
 
-_PDF_PATH = Path("data/original_data/constitution.pdf")
-_OUTPUT_DIR = Path("data/parsed")
-
-# Patterns that identify page header / footer lines to strip
-_NOISE_PATTERNS = [
-    re.compile(r"^[xivXIV\s]+$", re.IGNORECASE),  # Roman numeral page labels
-    re.compile(r"^\d+$"),  # bare page numbers
-    re.compile(
-        r"The Constitution of the Democratic Socialist Republic", re.IGNORECASE
-    ),
-]
-
-
-def _is_noise(line: str) -> bool:
-    return any(p.search(line) for p in _NOISE_PATTERNS)
+def _parse_footnote_lines(lines: list[str]) -> list[Footnote]:
+    result: list[Footnote] = []
+    for ln in lines:
+        if m := re.match(r"^(\d+)\s*[-\u2013]\s*(.+)$", ln):
+            result.append(Footnote(marker=m.group(1), text=m.group(2).strip()))
+    return result
 
 
 def _write_json(path: Path, data: object) -> None:

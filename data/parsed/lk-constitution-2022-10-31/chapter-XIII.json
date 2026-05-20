@@ -1,0 +1,66 @@
+{
+  "number": "XIII",
+  "title": "THE REFERENDUM",
+  "articles": [
+    {
+      "number": "85",
+      "title": null,
+      "text": null,
+      "clauses": [
+        {
+          "label": "(1)",
+          "text": "The President shall submit to the People by of Bills to Referendum every Bill or any provision in any Bill people by Referendum which the Cabinet of Ministers has certified as being intended to be submitted to the People by Referendum, or which the Supreme Court has determined as requiring the approval of the People at a Referendum if the number of votes cast in favour of such Bill amounts to not less than two-thirds of the whole number of Members (including those not present).",
+          "sub_clauses": []
+        },
+        {
+          "label": "(2)",
+          "text": "The President may in his discretion submit to the People by Referendum any Bill (not being a Bill for the repeal or amendment of any provision of the Constitution, or for the addition of any provision to the Constitution, or for the repeal and replacement of the Constitution, or which is inconsistent with any provision of the Constitution), which has been rejected by Parliament.",
+          "sub_clauses": []
+        },
+        {
+          "label": "(3)",
+          "text": "Any Bill or any provision in any Bill submitted to the People by Referendum shall be deemed to be approved by the People if approved by an absolute majority of the valid votes cast at such Referendum: Provided that when the total number of valid votes cast does not exceed two-thirds of the whole number of electors entered in the register of electors, such Bill shall be deemed to be approved only if approved by not less than one-third of the whole number of such electors.",
+          "sub_clauses": []
+        }
+      ],
+      "footnotes": [],
+      "repealed": false,
+      "original_doc_page_num": 106
+    },
+    {
+      "number": "86",
+      "title": null,
+      "text": "The President may, subject to the provisions of of matters of Article 85, submit to the People by Referendum any matter national importance to which in the opinion of the President is of national people by importance. Referendum",
+      "clauses": [],
+      "footnotes": [
+        {
+          "marker": "57",
+          "text": "Inserted by the Twentieth Amendment to the Constitution Sec. 14."
+        }
+      ],
+      "repealed": false,
+      "original_doc_page_num": 106
+    },
+    {
+      "number": "87",
+      "title": null,
+      "text": null,
+      "clauses": [
+        {
+          "label": "(1)",
+          "text": "Every Referendum shall be conducted by the Parliament to provide for Commissioner of Elections who shall communicate the procedure result thereof to the President.",
+          "sub_clauses": []
+        },
+        {
+          "label": "(2)",
+          "text": "Parliament shall by law provide for all matters relating to the procedure for the submission of Bills and of matters of national importance to the People by Referenda, the register of electors to be used at a Referendum, the creation of offences relating thereto and the punishment therefor and, all other matters necessary or incidental thereto.",
+          "sub_clauses": []
+        }
+      ],
+      "footnotes": [],
+      "repealed": false,
+      "original_doc_page_num": 107
+    }
+  ],
+  "original_doc_page_num": 106
+}
