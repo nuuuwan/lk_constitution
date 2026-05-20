@@ -1,15 +1,15 @@
 {
-  "number": "XIII",
+  "number": "013",
   "title": "THE REFERENDUM",
   "articles": [
     {
       "number": "85",
-      "title": null,
+      "description": "Submission of Bills to people by Referendum",
       "text": null,
       "clauses": [
         {
           "label": "(1)",
-          "text": "The President shall submit to the People by of Bills to Referendum every Bill or any provision in any Bill people by Referendum which the Cabinet of Ministers has certified as being intended to be submitted to the People by Referendum, or which the Supreme Court has determined as requiring the approval of the People at a Referendum if the number of votes cast in favour of such Bill amounts to not less than two-thirds of the whole number of Members (including those not present).",
+          "text": "The President shall submit to the People by Referendum every Bill or any provision in any Bill which the Cabinet of Ministers has certified as being intended to be submitted to the People by Referendum, or which the Supreme Court has determined as requiring the approval of the People at a Referendum if the number of votes cast in favour of such Bill amounts to not less than two-thirds of the whole number of Members (including those not present).",
           "sub_clauses": []
         },
         {
@@ -23,15 +23,6 @@
           "sub_clauses": []
         }
       ],
-      "footnotes": [],
-      "repealed": false,
-      "original_doc_page_num": 106
-    },
-    {
-      "number": "86",
-      "title": null,
-      "text": "The President may, subject to the provisions of of matters of Article 85, submit to the People by Referendum any matter national importance to which in the opinion of the President is of national people by importance. Referendum",
-      "clauses": [],
       "footnotes": [
         {
           "marker": "57",
@@ -42,18 +33,27 @@
       "original_doc_page_num": 106
     },
     {
+      "number": "86",
+      "description": "Submission of matters of national importance to people by Referendum",
+      "text": "The President may, subject to the provisions of Article 85, submit to the People by Referendum any matter which in the opinion of the President is of national importance. e Twentieth Amendment to the Constitution Sec. 14.",
+      "clauses": [],
+      "footnotes": [],
+      "repealed": false,
+      "original_doc_page_num": 106
+    },
+    {
       "number": "87",
-      "title": null,
+      "description": "Parliament to provide for procedure",
       "text": null,
       "clauses": [
         {
           "label": "(1)",
-          "text": "Every Referendum shall be conducted by the Parliament to provide for Commissioner of Elections who shall communicate the procedure result thereof to the President.",
+          "text": "Every Referendum shall be conducted by th Commissioner of Elections who shall communicate th result thereof to the President.",
           "sub_clauses": []
         },
         {
           "label": "(2)",
-          "text": "Parliament shall by law provide for all matters relating to the procedure for the submission of Bills and of matters of national importance to the People by Referenda, the register of electors to be used at a Referendum, the creation of offences relating thereto and the punishment therefor and, all other matters necessary or incidental thereto.",
+          "text": "Parliament shall by law provide for all matter relating to the procedure for the submission of Bills an of matters of national importance to the People b Referenda, the register of electors to be used at Referendum, the creation of offences relating thereto an the punishment therefor and, all other matters necessary o incidental thereto. titution of the Democratic Socialist Republic of Sri Lanka",
           "sub_clauses": []
         }
       ],

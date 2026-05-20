@@ -33,9 +33,7 @@ _PARA_SPLITS = [
 
 # Chapter / article structure patterns
 # Matches: [optional amendment_ref][CHAPTER [ROMAN][optional letter suffix]
-_CHAPTER_RE = re.compile(
-    r"^(?:\d+\[)?CHAPTER\s+([IVXLC]+)\s*([A-Z])?\s*\]?$"
-)
+_CHAPTER_RE = re.compile(r"^(?:\d+\[)?CHAPTER\s+([IVXLC]+)\s*([A-Z])?\s*\]?$")
 # Matches: [optional amendment_ref[optional words]] article_number.
 # Handles cases like "16[30.", "28[Powers 33.", "106[Constitution 111D.",
 # and left-margin marginalia prefixes like "Freedom of 10.", "Citizenship 26."
@@ -57,6 +55,39 @@ _ALPHA_CLAUSE_RE = re.compile(r"\(([a-hj-uw-z])\)\s+")
 # Signals that the main constitution body has ended (schedules / appendix follow)
 _BODY_END_RE = re.compile(r"Other Consequential Amendments", re.IGNORECASE)
 
+# Column x-boundaries separating body text from marginalia column.
+# Odd (right-hand) pages: marginalia is to the right of the body.
+# Even (left-hand) pages: marginalia is to the left of the body.
+_MARGIN_X_ODD = 340.0
+_MARGIN_X_EVEN = 165.0
+# Vertical span considered the top header / bottom footer area of a page.
+_PAGE_HEADER_BOTTOM = 75.0
+_PAGE_FOOTER_TOP = 680.0
+# x0 range that article-number words occupy in the body column.
+_ART_X_ODD = (85.0, 135.0)
+_ART_X_EVEN = (165.0, 220.0)
+# A word that looks like a bare article number, e.g. "1.", "14A.", "111J."
+_ART_NUM_WORD_RE = re.compile(r"^\d+[A-Z]?\.$")
+
+# ---- Roman numeral helpers -----------------------------------------------
+_ROMAN_VALUES: dict[str, int] = {
+    "I": 1, "V": 5, "X": 10, "L": 50, "C": 100
+}
+
+
+def _roman_to_int(s: str) -> int:
+    result, prev = 0, 0
+    for ch in reversed(s.upper()):
+        val = _ROMAN_VALUES[ch]
+        result += val if val >= prev else -val
+        prev = val
+    return result
+
+
+def _decimal_chapter_num(roman: str, suffix: str) -> str:
+    """Convert e.g. roman='XVI', suffix='A' → '016A'."""
+    return f"{_roman_to_int(roman):03d}{suffix}"
+
 
 def _is_noise(line: str) -> bool:
     return any(p.search(line) for p in _NOISE_PATTERNS)
@@ -75,19 +106,140 @@ class Parser:
     def __init__(self, pdf_path: Path = _PDF_PATH):
         self.pdf_path = Path(pdf_path)
         self._pages: list[tuple[int, str]] | None = None
+        self._body_pages: list[tuple[int, str]] | None = None
 
     # ------------------------------------------------------------------
     # Page extraction
     # ------------------------------------------------------------------
 
     def _extract_pages(self) -> list[tuple[int, str]]:
-        """Return [(pdf_page_number, text), …] for every page in the PDF."""
+        """Return [(pdf_page_number, full_text), ...] — uncropped.
+
+        Used for metadata and preamble parsing, where centred text may
+        span the margin boundary.
+        """
         if self._pages is None:
             with pdfplumber.open(self.pdf_path) as pdf:
                 self._pages = [
-                    (p.page_number, p.extract_text() or "") for p in pdf.pages
+                    (p.page_number, p.extract_text() or "")
+                    for p in pdf.pages
                 ]
         return self._pages
+
+    def _extract_body_pages(self) -> list[tuple[int, str]]:
+        """Return [(pdf_page_number, body_text), ...] cropped to body column.
+
+        Strips the narrow outer-margin column (which contains article
+        marginalia) so that article text parsing is clean.
+        """
+        if self._body_pages is None:
+            result: list[tuple[int, str]] = []
+            with pdfplumber.open(self.pdf_path) as pdf:
+                for p in pdf.pages:
+                    pn = p.page_number
+                    h = p.height
+                    w = p.width
+                    if pn % 2 == 1:  # odd page — margin on right
+                        body = p.crop((0, 0, _MARGIN_X_ODD, h))
+                    else:            # even page — margin on left
+                        body = p.crop((_MARGIN_X_EVEN, 0, w, h))
+                    result.append((pn, body.extract_text() or ""))
+            self._body_pages = result
+        return self._body_pages
+
+    def _build_marginalia_map(self) -> dict[str, str]:
+        """Return {article_number: description_text} extracted from the
+        narrow outer-margin column on each page using word coordinates.
+        """
+        marginalia: dict[str, str] = {}
+        with pdfplumber.open(self.pdf_path) as pdf:
+            for page in pdf.pages:
+                pn = page.page_number
+                is_odd = pn % 2 == 1
+                words = page.extract_words()
+
+                if is_odd:
+                    body_words = [w for w in words if w["x0"] < _MARGIN_X_ODD]
+                    margin_words = [
+                        w for w in words
+                        if w["x0"] >= _MARGIN_X_ODD
+                        and _PAGE_HEADER_BOTTOM < w["top"] < _PAGE_FOOTER_TOP
+                    ]
+                    art_x_min, art_x_max = _ART_X_ODD
+                else:
+                    body_words = [w for w in words if w["x0"] >= _MARGIN_X_EVEN]
+                    margin_words = [
+                        w for w in words
+                        if w["x0"] < _MARGIN_X_EVEN
+                        and _PAGE_HEADER_BOTTOM < w["top"] < _PAGE_FOOTER_TOP
+                    ]
+                    art_x_min, art_x_max = _ART_X_EVEN
+
+                # Find article-number word positions in the body column.
+                art_positions: list[tuple[str, float]] = []
+                for w in body_words:
+                    if (
+                        _ART_NUM_WORD_RE.match(w["text"])
+                        and art_x_min <= w["x0"] <= art_x_max
+                    ):
+                        art_positions.append((w["text"].rstrip("."), w["top"]))
+
+                if not art_positions or not margin_words:
+                    continue
+
+                # For each article, gather margin words in its vertical range.
+                for idx, (art_num, art_top) in enumerate(art_positions):
+                    next_top = (
+                        art_positions[idx + 1][1]
+                        if idx + 1 < len(art_positions)
+                        else page.height
+                    )
+                    nearby = [
+                        w for w in margin_words
+                        if art_top - 6 <= w["top"] < next_top
+                    ]
+                    if not nearby:
+                        continue
+
+                    nearby.sort(key=lambda w: (w["top"], w["x0"]))
+
+                    # Stop at the first large vertical gap (> 25pt) so that
+                    # footnote markers at the bottom of the page are not
+                    # mistaken for the last article's description.
+                    pruned: list[dict] = [nearby[0]]
+                    for w in nearby[1:]:
+                        if w["top"] - pruned[-1]["top"] > 25.0:
+                            break
+                        pruned.append(w)
+                    nearby = pruned
+
+                    # Group words into text lines by vertical proximity.
+                    lines: list[list[str]] = [[]]
+                    prev_top = nearby[0]["top"]
+                    for w in nearby:
+                        if w["top"] - prev_top > 8.0:
+                            lines.append([])
+                        lines[-1].append(w["text"])
+                        prev_top = w["top"]
+
+                    description = " ".join(
+                        " ".join(line) for line in lines if line
+                    )
+                    # Strip leading amendment-reference markers, e.g. "45[Title"
+                    description = re.sub(r"^\d+\[", "", description).strip()
+                    # Discard footnote references (start with "N -") and
+                    # footnote continuations (start with a lowercase letter).
+                    if not description:
+                        continue
+                    if re.match(r"^\d+\s*[-\u2013]", description):
+                        continue
+                    if description[0].islower():
+                        continue
+
+                    # setdefault: first valid occurrence wins over later
+                    # reuse of the same number in schedule list items.
+                    marginalia.setdefault(art_num, description)
+        return marginalia
 
     def _full_text(self) -> str:
         return "\n".join(text for _, text in self._extract_pages())
@@ -189,7 +341,9 @@ class Parser:
     # Chapters
     # ------------------------------------------------------------------
 
-    def _cleaned_lines(self, pages: list[tuple[int, str]]) -> list[tuple[int, str]]:
+    def _cleaned_lines(
+        self, pages: list[tuple[int, str]]
+    ) -> list[tuple[int, str]]:
         """Return [(page_num, line), ...] with header/footer noise stripped."""
         result: list[tuple[int, str]] = []
         for page_num, text in pages:
@@ -203,7 +357,26 @@ class Parser:
                 result.append((page_num, s))
         return result
 
-    def _parse_chapters(self, pages: list[tuple[int, str]]) -> list[Chapter]:
+    @staticmethod
+    def _collect_page_footnotes(
+        lines: list[tuple[int, str]]
+    ) -> dict[int, list[Footnote]]:
+        """Build {page_number: [Footnote, ...]} from all footnote lines."""
+        pool: dict[int, list[Footnote]] = {}
+        for pg, ln in lines:
+            if _FOOTNOTE_RE.match(ln):
+                if m := re.match(r"^(\d+)\s*[-\u2013]\s*(.+)$", ln):
+                    pool.setdefault(pg, []).append(
+                        Footnote(marker=m.group(1), text=m.group(2).strip())
+                    )
+        return pool
+
+    def _parse_chapters(
+        self,
+        pages: list[tuple[int, str]],
+        marginalia: dict[str, str],
+        page_footnotes: dict[int, list[Footnote]],
+    ) -> list[Chapter]:
         lines = self._cleaned_lines(pages)
 
         # Find where chapters actually begin so the TOC doesn't interfere
@@ -229,13 +402,18 @@ class Parser:
                 if ci + 1 < len(chapter_starts)
                 else len(lines)
             )
-            chapter = self._parse_chapter_block(lines[start:end])
+            chapter = self._parse_chapter_block(
+                lines[start:end], marginalia, page_footnotes
+            )
             if chapter:
                 chapters.append(chapter)
         return chapters
 
     def _parse_chapter_block(
-        self, lines: list[tuple[int, str]]
+        self,
+        lines: list[tuple[int, str]],
+        marginalia: dict[str, str],
+        page_footnotes: dict[int, list[Footnote]],
     ) -> Chapter | None:
         if not lines:
             return None
@@ -246,7 +424,8 @@ class Parser:
 
         numeral = m.group(1).upper()
         suffix = (m.group(2) or "").strip()
-        chapter_number = numeral + suffix  # e.g. "I", "VIIA", "XIXB"
+        # Convert roman numeral to zero-padded decimal, e.g. XVI+A → 016A
+        chapter_number = _decimal_chapter_num(numeral, suffix)
 
         # Collect title lines: everything after the chapter header until first article
         title_lines: list[str] = []
@@ -259,7 +438,9 @@ class Parser:
 
         title = _AMEND_REF_RE.sub("", " ".join(title_lines)).strip()
 
-        articles = self._parse_articles(lines[article_start:])
+        articles = self._parse_articles(
+            lines[article_start:], marginalia, page_footnotes
+        )
         return Chapter(
             number=chapter_number,
             title=title,
@@ -268,7 +449,10 @@ class Parser:
         )
 
     def _parse_articles(
-        self, lines: list[tuple[int, str]]
+        self,
+        lines: list[tuple[int, str]],
+        marginalia: dict[str, str],
+        page_footnotes: dict[int, list[Footnote]],
     ) -> list[Article]:
         article_starts = [
             i for i, (_, ln) in enumerate(lines) if _ARTICLE_RE.match(ln)
@@ -280,13 +464,18 @@ class Parser:
                 if ai + 1 < len(article_starts)
                 else len(lines)
             )
-            art = self._parse_article_block(lines[start:end])
+            art = self._parse_article_block(
+                lines[start:end], marginalia, page_footnotes
+            )
             if art:
                 articles.append(art)
         return articles
 
     def _parse_article_block(
-        self, lines: list[tuple[int, str]]
+        self,
+        lines: list[tuple[int, str]],
+        marginalia: dict[str, str],
+        page_footnotes: dict[int, list[Footnote]],
     ) -> Article | None:
         if not lines:
             return None
@@ -297,29 +486,46 @@ class Parser:
 
         art_number = m.group("num")
 
+        # Resolve marginalia description for this article.
+        title = marginalia.get(art_number) or None
+
         # Content of the first line starts after the matched article-number prefix
         first_content = first_line[m.end():].strip()
 
-        # Separate footnote lines from content lines (remaining lines after first)
+        # Collect content lines, skipping footnote lines (which belong to the
+        # page pool rather than a specific article block).
         content_parts: list[str] = [first_content]
-        raw_footnotes: list[str] = []
         for _, ln in lines[1:]:
-            if _FOOTNOTE_RE.match(ln):
-                raw_footnotes.append(ln)
-            else:
+            if not _FOOTNOTE_RE.match(ln):
                 content_parts.append(ln)
+
+        # Identify which amendment-reference markers appear in this article's
+        # raw text (before stripping brackets) so we can assign the right
+        # footnotes from the page pool.
+        raw_with_markers = first_line + " " + " ".join(
+            ln for _, ln in lines[1:] if not _FOOTNOTE_RE.match(ln)
+        )
+        used_markers = set(re.findall(r"(\d+)\[", raw_with_markers))
+
+        # Pull matching footnotes from all pages spanned by this article.
+        footnotes: list[Footnote] = []
+        if used_markers:
+            for pg in {pg for pg, _ in lines}:
+                for fn in page_footnotes.get(pg, []):
+                    if fn.marker in used_markers:
+                        footnotes.append(fn)
+            # Maintain stable ordering by marker number.
+            footnotes.sort(key=lambda fn: int(fn.marker))
 
         # Build cleaned flat text — strip editorial amendment brackets
         raw = _AMEND_REF_RE.sub("", " ".join(content_parts))
         raw = re.sub(r"\s{2,}", " ", raw).strip()
 
-        footnotes = _parse_footnote_lines(raw_footnotes)
-
         # Repealed article: entire content is just a Repealed marker
         if re.fullmatch(r"\[?Repealed\]?\.?", raw.strip(), re.IGNORECASE):
             return Article(
                 number=art_number,
-                title=None,
+                description=title,
                 text=None,
                 repealed=True,
                 footnotes=footnotes,
@@ -328,17 +534,19 @@ class Parser:
 
         clauses = _parse_clauses(raw)
         if clauses:
-            # If there's text before the first clause marker, put it in the intro
-            # by checking what's before the first (1)/(a) in the raw text
             first_clause_match = (
                 _NUM_CLAUSE_RE.search(raw)
                 if _NUM_CLAUSE_RE.search(raw)
                 else _ALPHA_CLAUSE_RE.search(raw)
             )
-            intro = raw[: first_clause_match.start()].strip() if first_clause_match else None
+            intro = (
+                raw[: first_clause_match.start()].strip()
+                if first_clause_match
+                else None
+            )
             return Article(
                 number=art_number,
-                title=None,
+                description=title,
                 text=intro or None,
                 clauses=clauses,
                 footnotes=footnotes,
@@ -347,7 +555,7 @@ class Parser:
 
         return Article(
             number=art_number,
-            title=None,
+            description=title,
             text=raw,
             footnotes=footnotes,
             original_doc_page_num=page_num,
@@ -358,11 +566,17 @@ class Parser:
     # ------------------------------------------------------------------
 
     def parse(self) -> Constitution:
-        pages = self._extract_pages()
+        pages = self._extract_pages()           # full text: metadata + preamble
+        body_pages = self._extract_body_pages() # cropped: chapters + articles
         full_text = "\n".join(t for _, t in pages)
         meta = self._parse_metadata(full_text)
         preamble = self._parse_preamble(pages)
-        chapters = self._parse_chapters(pages)
+        marginalia = self._build_marginalia_map()
+        # Footnotes on even pages have their number in the outer margin; use
+        # full-page text so the number prefix is not cropped out.
+        full_cleaned = self._cleaned_lines(pages)
+        page_footnotes = self._collect_page_footnotes(full_cleaned)
+        chapters = self._parse_chapters(body_pages, marginalia, page_footnotes)
         return Constitution(
             title=meta["title"],
             edition=meta["edition"],
@@ -417,6 +631,9 @@ class Parser:
             _write_json(
                 folder / f"chapter-{chapter.number}.json", asdict(chapter)
             )
+            # Remove any stale roman-numeral–named files from previous runs.
+            for stale in folder.glob("chapter-[IVXLCivxlc]*.json"):
+                stale.unlink(missing_ok=True)
 
         # schedule-<NUMBER>.json — one per schedule
         for schedule in constitution.schedules:

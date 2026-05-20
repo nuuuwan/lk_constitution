@@ -1,15 +1,15 @@
 {
-  "number": "V",
+  "number": "005",
   "title": "CITIZENSHIP",
   "articles": [
     {
       "number": "26",
-      "title": null,
+      "description": "Citizenship of Sri Lanka",
       "text": null,
       "clauses": [
         {
           "label": "(1)",
-          "text": "There shall be one status of citizenship of Sri Lanka known as “the status of a citizen of Sri Lanka”.",
+          "text": "There shall be one status of citizenship known as “the status of a citizen of Sri Lanka”.",
           "sub_clauses": []
         },
         {

@@ -9,7 +9,7 @@ from .Footnote import Footnote
 @dataclass
 class Article:
     number: str
-    title: str | None
+    description: str | None
     text: str | None
     clauses: list[Clause] = field(default_factory=list)
     footnotes: list[Footnote] = field(default_factory=list)

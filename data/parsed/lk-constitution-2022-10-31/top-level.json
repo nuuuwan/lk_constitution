@@ -6,159 +6,159 @@
   "published_by": "Parliament Secretariat",
   "chapters": [
     {
-      "number": "I",
+      "number": "001",
       "title": "THE PEOPLE, THE STATE AND SOVEREIGNTY",
-      "file": "chapter-I.json"
+      "file": "chapter-001.json"
     },
     {
-      "number": "II",
+      "number": "002",
       "title": "BUDDHISM",
-      "file": "chapter-II.json"
+      "file": "chapter-002.json"
     },
     {
-      "number": "III",
+      "number": "003",
       "title": "FUNDAMENTAL RIGHTS",
-      "file": "chapter-III.json"
+      "file": "chapter-003.json"
     },
     {
-      "number": "IV",
+      "number": "004",
       "title": "LANGUAGE",
-      "file": "chapter-IV.json"
+      "file": "chapter-004.json"
     },
     {
-      "number": "V",
+      "number": "005",
       "title": "CITIZENSHIP",
-      "file": "chapter-V.json"
+      "file": "chapter-005.json"
     },
     {
-      "number": "VI",
+      "number": "006",
       "title": "DIRECTIVE PRINCIPLES OF STATE POLICY AND FUNDAMENTAL DUTIES",
-      "file": "chapter-VI.json"
+      "file": "chapter-006.json"
     },
     {
-      "number": "VII",
+      "number": "007",
       "title": "THE EXECUTIVE The President of the Republic",
-      "file": "chapter-VII.json"
+      "file": "chapter-007.json"
     },
     {
-      "number": "VIIA",
+      "number": "007A",
       "title": "THE CONSTITUTIONAL COUNCIL",
-      "file": "chapter-VIIA.json"
+      "file": "chapter-007A.json"
     },
     {
-      "number": "VIII",
+      "number": "008",
       "title": "THE EXECUTIVE The Cabinet of Ministers",
-      "file": "chapter-VIII.json"
+      "file": "chapter-008.json"
     },
     {
-      "number": "IX",
+      "number": "009",
       "title": "THE EXECUTIVE The Public Service",
-      "file": "chapter-IX.json"
+      "file": "chapter-009.json"
     },
     {
-      "number": "X",
+      "number": "010",
       "title": "THE LEGISLATURE Parliament",
-      "file": "chapter-X.json"
+      "file": "chapter-010.json"
     },
     {
-      "number": "XI",
+      "number": "011",
       "title": "THE LEGISLATURE Procedure and Powers",
-      "file": "chapter-XI.json"
+      "file": "chapter-011.json"
     },
     {
-      "number": "XII",
+      "number": "012",
       "title": "THE LEGISLATURE Amendment of the Constitution",
-      "file": "chapter-XII.json"
+      "file": "chapter-012.json"
     },
     {
-      "number": "XIII",
+      "number": "013",
       "title": "THE REFERENDUM",
-      "file": "chapter-XIII.json"
+      "file": "chapter-013.json"
     },
     {
-      "number": "XIV",
+      "number": "014",
       "title": "THE FRANCHISE AND ELECTIONS",
-      "file": "chapter-XIV.json"
+      "file": "chapter-014.json"
     },
     {
-      "number": "XIVA",
+      "number": "014A",
       "title": "ELECTION COMMISSION",
-      "file": "chapter-XIVA.json"
+      "file": "chapter-014A.json"
     },
     {
-      "number": "XV",
+      "number": "015",
       "title": "THE JUDICIARY",
-      "file": "chapter-XV.json"
+      "file": "chapter-015.json"
     },
     {
-      "number": "XVA",
+      "number": "015A",
       "title": "JUDICIAL SERVICE COMMISSION",
-      "file": "chapter-XVA.json"
+      "file": "chapter-015A.json"
     },
     {
-      "number": "XVI",
-      "title": "THE SUPERIOR COURTS The Supreme Court General",
-      "file": "chapter-XVI.json"
+      "number": "016",
+      "title": "THE SUPERIOR COURTS The Supreme Court",
+      "file": "chapter-016.json"
     },
     {
-      "number": "XVII",
+      "number": "017",
       "title": "FINANCE",
-      "file": "chapter-XVII.json"
+      "file": "chapter-017.json"
     },
     {
-      "number": "XVIIA",
+      "number": "017A",
       "title": "",
-      "file": "chapter-XVIIA.json"
+      "file": "chapter-017A.json"
     },
     {
-      "number": "XVIII",
+      "number": "018",
       "title": "PUBLIC SECURITY",
-      "file": "chapter-XVIII.json"
+      "file": "chapter-018.json"
     },
     {
-      "number": "XVIIIA",
+      "number": "018A",
       "title": "NATIONAL POLICE COMMISSION",
-      "file": "chapter-XVIIIA.json"
+      "file": "chapter-018A.json"
     },
     {
-      "number": "XIX",
+      "number": "019",
       "title": "THE PARLIAMENTARY COMMISSIONER FOR ADMINISTRATION",
-      "file": "chapter-XIX.json"
+      "file": "chapter-019.json"
     },
     {
-      "number": "XIXA",
+      "number": "019A",
       "title": "Commission to Investigate Allegations of Bribery or Corruption",
-      "file": "chapter-XIXA.json"
+      "file": "chapter-019A.json"
     },
     {
-      "number": "XIXB",
+      "number": "019B",
       "title": "National Procurement Commission",
-      "file": "chapter-XIXB.json"
+      "file": "chapter-019B.json"
     },
     {
-      "number": "XX",
+      "number": "020",
       "title": "GENERAL",
-      "file": "chapter-XX.json"
+      "file": "chapter-020.json"
     },
     {
-      "number": "XXI",
+      "number": "021",
       "title": "TRANSITIONAL PROVISIONS",
-      "file": "chapter-XXI.json"
+      "file": "chapter-021.json"
     },
     {
-      "number": "XXII",
+      "number": "022",
       "title": "INTERPRETATION",
-      "file": "chapter-XXII.json"
+      "file": "chapter-022.json"
     },
     {
-      "number": "XXIII",
+      "number": "023",
       "title": "REPEAL",
-      "file": "chapter-XXIII.json"
+      "file": "chapter-023.json"
     },
     {
-      "number": "XXIV",
+      "number": "024",
       "title": "PROMULGATION OF THE CONSTITUTION",
-      "file": "chapter-XXIV.json"
+      "file": "chapter-024.json"
     }
   ],
   "schedules": []
