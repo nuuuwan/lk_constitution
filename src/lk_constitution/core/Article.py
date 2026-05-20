@@ -14,3 +14,4 @@ class Article:
     clauses: list[Clause] = field(default_factory=list)
     footnotes: list[Footnote] = field(default_factory=list)
     repealed: bool = False
+    original_doc_page_num: int | None = None

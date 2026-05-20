@@ -26,3 +26,4 @@ class Schedule:
     text: str | None = None
     items: list[ScheduleItem] = field(default_factory=list)
     lists: list[LegislativeList] = field(default_factory=list)
+    original_doc_page_num: int | None = None

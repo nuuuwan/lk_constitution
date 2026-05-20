@@ -10,3 +10,4 @@ class Chapter:
     number: str
     title: str
     articles: list[Article] = field(default_factory=list)
+    original_doc_page_num: int | None = None
