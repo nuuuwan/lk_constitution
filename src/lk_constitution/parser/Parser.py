@@ -16,7 +16,7 @@ _OUTPUT_DIR = Path("data/parsed")
 # Lines matching any of these patterns are page headers / footers
 _NOISE_PATTERNS = [
     re.compile(r"^[xivXIV\s]+$", re.IGNORECASE),  # Roman numeral page labels
-    re.compile(r"^\d+$"),                           # bare page numbers
+    re.compile(r"^\d+$"),  # bare page numbers
     re.compile(
         r"The Constitution of the Democratic Socialist Republic",
         re.IGNORECASE,
@@ -37,7 +37,11 @@ def _is_noise(line: str) -> bool:
 
 
 def _clean_paragraph(raw: str) -> str:
-    lines = [ln.strip() for ln in raw.splitlines() if ln.strip() and not _is_noise(ln.strip())]
+    lines = [
+        ln.strip()
+        for ln in raw.splitlines()
+        if ln.strip() and not _is_noise(ln.strip())
+    ]
     return re.sub(r" {2,}", " ", " ".join(lines)).strip()
 
 
@@ -55,8 +59,7 @@ class Parser:
         if self._pages is None:
             with pdfplumber.open(self.pdf_path) as pdf:
                 self._pages = [
-                    (p.page_number, p.extract_text() or "")
-                    for p in pdf.pages
+                    (p.page_number, p.extract_text() or "") for p in pdf.pages
                 ]
         return self._pages
 
@@ -152,7 +155,9 @@ class Parser:
             segments = new_segments
 
         paragraphs = [s.strip() for s in segments if s.strip()]
-        return Preamble(text_paragraphs=paragraphs, original_doc_page_num=preamble_page)
+        return Preamble(
+            text_paragraphs=paragraphs, original_doc_page_num=preamble_page
+        )
 
     # ------------------------------------------------------------------
     # Public API
@@ -177,7 +182,9 @@ class Parser:
         constitution: Constitution,
         output_dir: Path = _OUTPUT_DIR,
     ) -> Path:
-        folder = Path(output_dir) / f"lk-constitution-{constitution.amended_up_to}"
+        folder = (
+            Path(output_dir) / f"lk-constitution-{constitution.amended_up_to}"
+        )
         folder.mkdir(parents=True, exist_ok=True)
 
         # top-level.json — metadata + index (no embedded content)
@@ -211,7 +218,9 @@ class Parser:
 
         # chapter-<NUMBER>.json — one per chapter
         for chapter in constitution.chapters:
-            _write_json(folder / f"chapter-{chapter.number}.json", asdict(chapter))
+            _write_json(
+                folder / f"chapter-{chapter.number}.json", asdict(chapter)
+            )
 
         # schedule-<NUMBER>.json — one per schedule
         for schedule in constitution.schedules:
@@ -226,8 +235,11 @@ class Parser:
 # Helper
 # ------------------------------------------------------------------
 
+
 def _write_json(path: Path, data: object) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    path.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
 
 
 _PDF_PATH = Path("data/original_data/constitution.pdf")
@@ -235,9 +247,11 @@ _OUTPUT_DIR = Path("data/parsed")
 
 # Patterns that identify page header / footer lines to strip
 _NOISE_PATTERNS = [
-    re.compile(r"^[xivXIV\s]+$", re.IGNORECASE),       # Roman numeral page labels
-    re.compile(r"^\d+$"),                                # bare page numbers
-    re.compile(r"The Constitution of the Democratic Socialist Republic", re.IGNORECASE),
+    re.compile(r"^[xivXIV\s]+$", re.IGNORECASE),  # Roman numeral page labels
+    re.compile(r"^\d+$"),  # bare page numbers
+    re.compile(
+        r"The Constitution of the Democratic Socialist Republic", re.IGNORECASE
+    ),
 ]
 
 
@@ -246,4 +260,6 @@ def _is_noise(line: str) -> bool:
 
 
 def _write_json(path: Path, data: object) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    path.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
