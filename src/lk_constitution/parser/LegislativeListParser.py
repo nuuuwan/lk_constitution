@@ -53,20 +53,30 @@ def _numbered(lines: list[tuple[int, str]]) -> list[LegislativeListItem]:
     for _, ln in lines:
         if m := _ITEM_RE.match(ln):
             if cur_n is not None:
-                items.append(LegislativeListItem(
-                    cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
-                ))
+                items.append(
+                    LegislativeListItem(
+                        cur_n,
+                        cur_s,
+                        re.sub(r"\s+", " ", " ".join(cur_d)).strip(),
+                    )
+                )
             cur_n = int(m.group(1))
             rest = m.group(2).strip()
             parts = _DASH_RE.split(rest, 1)
             cur_s = re.sub(r"\s*\.\s*$", "", parts[0]).strip()
-            cur_d = [parts[1].strip()] if len(parts) > 1 and parts[1].strip() else []
+            cur_d = (
+                [parts[1].strip()]
+                if len(parts) > 1 and parts[1].strip()
+                else []
+            )
         elif cur_n is not None:
             cur_d.append(ln)
     if cur_n is not None:
-        items.append(LegislativeListItem(
-            cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
-        ))
+        items.append(
+            LegislativeListItem(
+                cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
+            )
+        )
     return items
 
 
@@ -77,14 +87,17 @@ def _by_topic(lines: list[tuple[int, str]]) -> list[LegislativeListItem]:
 
     for _, ln in lines:
         is_topic = (
-            bool(ln) and ln[0].isupper()
+            bool(ln)
+            and ln[0].isupper()
             and not ln.startswith(("(", "This", "–", "-"))
             and not re.match(r"^\d", ln)
         )
         if is_topic and cur_s:
-            items.append(LegislativeListItem(
-                cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
-            ))
+            items.append(
+                LegislativeListItem(
+                    cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
+                )
+            )
             cur_d = []
         if is_topic:
             cur_n += 1
@@ -92,7 +105,9 @@ def _by_topic(lines: list[tuple[int, str]]) -> list[LegislativeListItem]:
         else:
             cur_d.append(ln)
     if cur_s:
-        items.append(LegislativeListItem(
-            cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
-        ))
+        items.append(
+            LegislativeListItem(
+                cur_n, cur_s, re.sub(r"\s+", " ", " ".join(cur_d)).strip()
+            )
+        )
     return items

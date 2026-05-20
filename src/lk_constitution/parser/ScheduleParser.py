@@ -57,8 +57,11 @@ def _block(lines: list[tuple[int, str]]) -> Schedule | None:
         return Schedule(num, title, ContentType.TEXT, text=_txt(body), **kw)
     if num == 9:
         return Schedule(
-            num, title, ContentType.LEGISLATIVE_LIST,
-            lists=parse_legislative_lists(body), **kw
+            num,
+            title,
+            ContentType.LEGISLATIVE_LIST,
+            lists=parse_legislative_lists(body),
+            **kw,
         )
     return Schedule(num, title, ContentType.LIST, items=_items(body), **kw)
 
@@ -70,17 +73,19 @@ def _ca(s: str) -> str:
 def _title(lines: list[tuple[int, str]], pos: int) -> tuple[str, int]:
     if pos < len(lines):
         ln = lines[pos][1]
-        if not (re.match(r'[\d"]', ln) or
-                re.match(r"LIST\s+", ln, re.I) or
-                re.search(r"\d\s+Member", ln)):
+        if not (
+            re.match(r'[\d"]', ln)
+            or re.match(r"LIST\s+", ln, re.I)
+            or re.search(r"\d\s+Member", ln)
+        ):
             return _ca(ln), pos + 1
     return "", pos
 
 
 def _txt(lines: list[tuple[int, str]]) -> str:
-    return re.sub(r"\s+", " ",
-                  " ".join(ln for _, ln in lines
-                           if not _FN_RE.match(ln))).strip()
+    return re.sub(
+        r"\s+", " ", " ".join(ln for _, ln in lines if not _FN_RE.match(ln))
+    ).strip()
 
 
 def _items(lines: list[tuple[int, str]]) -> list[ScheduleItem]:
