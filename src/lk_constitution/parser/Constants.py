@@ -60,3 +60,18 @@ _ROMAN_VALUES: dict[str, int] = {
     "L": 50,
     "C": 100,
 }
+
+# Schedule parsing
+_SCHEDULE_RE = re.compile(
+    r"(?:\d+\[)?\[?\s*"
+    r"(FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH)"
+    r"\s+SCHEDULE",
+    re.IGNORECASE,
+)
+_ORDINAL_TO_SCHEDULE_NUM: dict[str, int] = {
+    "FIRST": 1, "SECOND": 2, "THIRD": 3, "FOURTH": 4, "FIFTH": 5,
+    "SIXTH": 6, "SEVENTH": 7, "EIGHTH": 8, "NINTH": 9,
+}
+_SCHED_ARTICLE_RE = re.compile(
+    r"\[?ARTICLE\s+(.+?)(?:\]\s*$|\s*$)", re.IGNORECASE
+)

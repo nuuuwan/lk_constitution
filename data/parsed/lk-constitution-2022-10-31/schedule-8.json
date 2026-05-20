@@ -1,0 +1,48 @@
+{
+  "number": 8,
+  "title": "Provinces",
+  "content_type": "list",
+  "referred_by_article": "154A",
+  "description": null,
+  "text": null,
+  "items": [
+    {
+      "number": 1,
+      "value": "Western"
+    },
+    {
+      "number": 2,
+      "value": "North-Western"
+    },
+    {
+      "number": 3,
+      "value": "Uva"
+    },
+    {
+      "number": 4,
+      "value": "Sabaragamuwa"
+    },
+    {
+      "number": 5,
+      "value": "Central"
+    },
+    {
+      "number": 6,
+      "value": "Eastern"
+    },
+    {
+      "number": 7,
+      "value": "Southern"
+    },
+    {
+      "number": 8,
+      "value": "North-Central"
+    },
+    {
+      "number": 9,
+      "value": "Northern"
+    }
+  ],
+  "lists": [],
+  "original_doc_page_num": 273
+}

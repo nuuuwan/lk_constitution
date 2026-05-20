@@ -1,0 +1,845 @@
+{
+  "number": 9,
+  "title": "",
+  "content_type": "legislative_list",
+  "referred_by_article": null,
+  "description": null,
+  "text": null,
+  "items": [],
+  "lists": [
+    {
+      "list_id": "I",
+      "name": "Provincial Council List",
+      "items": [
+        {
+          "number": 1,
+          "subject": "Police and Public order",
+          "description": "Public order and the exercise of police powers, to the extent set out in Appendix I, within the Province, but not including National Defence, National Security and the use of any armed forces or any other forces under the control of the Government of Sri Lanka in aid of the civil power and not including the city of Colombo, Sri Jayewardenepura, Kotte, and their environs the limits of which shall be specified by the President by Order published in the Gazette."
+        },
+        {
+          "number": 2,
+          "subject": "Planning",
+          "description": "Implementation of provincial economic plans."
+        },
+        {
+          "number": 3,
+          "subject": "Education and Educational Services",
+          "description": "Education to the extent set out in Appendix III."
+        },
+        {
+          "number": 4,
+          "subject": "Local Government",
+          "description": "4:1 Local authorities for the purpose of Local Government and village administration, such as Municipal Councils, Urban Councils and Pradeshiya Sabhas, except that, the constitution, form and structure of local authorities shall be determined by law; 4:2 Supervision of the administration of Local Authorities established by law, including the power of dissolution (subject to such quasi-judicial inquiries into the grounds for dissolution and legal remedies in respect thereof, as may be provided by law and subject to provisions relating to audit as may be pro- vided by law); 4:3 Local Authorities will have the powers vested in them under existing law. Municipal Councils and Urban Councils 188 - Inserted by the Thirteenth Amendment to the Constitution Sec. 7. will have the powers vested in them under the Municipal Councils Ordinance and the Urban Councils Ordinance, Pradeshiya Sabha will have the powers vested in them under existing law. It will be open to a Provincial Council to confer additional powers on local authorities but not to take away their powers; 4:4 Gramodaya Mandalayas will have the powers vested in Gramodaya Mandalayas under existing law. It will be open to a Provincial Council to confer additional powers on Gramodaya Mandalayas."
+        },
+        {
+          "number": 5,
+          "subject": "Provincial Housing and Construction",
+          "description": "5:1 Implementing, co-ordinating, supervising and monitoring provincial housing development programmes and projects (other than National Housing Development Authority projects) including aided self-help housing projects, housing loans and the provision of building materials; 5:2 The implementation of the Protection of Tenants Act and the Rent Act within a Province; 5:3 Construction activity in respect of subjects in this List."
+        },
+        {
+          "number": 6,
+          "subject": "Roads and bridges and ferries thereon within the Province, other",
+          "description": "than– (a) national highways; (b) bridges and ferries on national highways."
+        },
+        {
+          "number": 7,
+          "subject": "Social Services and Rehabilitation",
+          "description": "7:1 Probation and Child Care Services; 7:2 The Rehabilitation of destitute persons and families; 7:3 Rehabilitation and welfare of physically, mentally and socially handicapped persons; 7:4 Relief of the disabled and unemployable."
+        },
+        {
+          "number": 8,
+          "subject": "Regulation of road passenger carriage services and the carriage of",
+          "description": "goods by motor vehicles within the Province and the provisions of inter-provincial road transport services."
+        },
+        {
+          "number": 9,
+          "subject": "Agriculture and Agrarian Services",
+          "description": "9:1 Agriculture, including agricultural extension, promotion and education for provincial purposes and agricultural services (other than in inter-provincial irrigation and land settlement schemes, State land and plantation agriculture); 9:2 Rehabilitation and maintenance of minor irrigation works; 9:3 Agricultural research save and except institutions designated as national agricultural research institutions."
+        },
+        {
+          "number": 10,
+          "subject": "Rural Development",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "subject": "Health",
+          "description": "11:1 The establishment and maintenance of public hospitals, rural hospitals, maternity homes, dispensaries (other than teaching hospitals and hospitals established for special purposes); 11:2 Public health services, health education, nutrition, family health maternity and child care, food and food sanitation, environmental health; 11:3 Formulation and implementation of Health Development Plan and of the Annual Health Plan for the Province; 11:4 The provision of facilities for all institutions referred to in 1 above within the Province, excluding the procurement of drugs; 11:5 Awarding of Scholarships for Post-Graduate Education within Sri Lanka to personnel attached to the Institutions specified in 1 above."
+        },
+        {
+          "number": 12,
+          "subject": "Indigenous Medicine",
+          "description": "Ayurveda, Siddha and Unani – 12:1 Establishment of Ayurvedic dispensaries and hospitals, grants to such dispensaries and hospitals; 12:2 Establishment and maintenance of herbaria. 13:1 Rest houses maintained by local authorities; and 13:2 Circuit bungalows presently administered by Government departments whose functions are exclusively specified in this List."
+        },
+        {
+          "number": 14,
+          "subject": "Pawn brokers - Pawn brokers other than pawn brokers business",
+          "description": "carried on by Banks."
+        },
+        {
+          "number": 15,
+          "subject": "Markets, fairs",
+          "description": ""
+        },
+        {
+          "number": 16,
+          "subject": "Food supply and distribution within the Province",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "subject": "Co-operatives",
+          "description": "17:1 Co-operative undertakings and the organization, registration, supervision and audit of co-operative societies within the Province; 17:2 Co-operative development within the Province including co-operative education and propaganda; 17:3 Provincial Co-operative Employees Commission; 17:4 Matters connected with employment, promotion, retirement and other connected matters of employees of co-operative societies within the Province."
+        },
+        {
+          "number": 18,
+          "subject": "Land",
+          "description": "Land, that is to say, rights in or over land, land tenure, transfer and alienation of land, land use, land settlement and land improvement, to the extent set out in Appendix II."
+        },
+        {
+          "number": 19,
+          "subject": "Irrigation",
+          "description": "Planning, designing, implementation, supervision and maintenance of all irrigation works, other than irrigation schemes relating to rivers running through more than one Province or inter provincial irrigation and land development schemes."
+        },
+        {
+          "number": 20,
+          "subject": "Animal husbandry",
+          "description": "Preservation, protection and improvement of stock and prevention of animal diseases within the Province."
+        },
+        {
+          "number": 21,
+          "subject": "Subject to the formulation and implementation of National Policy in",
+          "description": "regard to development and planning, the power to promote, establish and engage in agricultural, industrial, commercial and trading enterprises and other income-generating projects, within the Province without prejudice to the power of the Government and Public Corporations to have such enterprises and projects. (This would include the promotion of scientific and industrial research within the Province and the preparation, co-ordination and the implementation of industrial development plans for the Province)."
+        },
+        {
+          "number": 22,
+          "subject": "Reformatories, Borstal institutions and other institutions of a like",
+          "description": "nature and persons detained therein, arrangements with other Provinces for the use of such institutions."
+        },
+        {
+          "number": 23,
+          "subject": "Possession, transport, purchase and sale of intoxicating liquors",
+          "description": ""
+        },
+        {
+          "number": 24,
+          "subject": "Burials and burial grounds, cremations and cremation grounds,",
+          "description": "other than those declared by or under law made by Parliament to be national memorial cemeteries. 25:1 Libraries, Museums and other similar institutions controlled or financed by a Provincial Council; 25:2 Ancient and historical monuments and records other than those declared by or under law made by Parliament to be of national importance."
+        },
+        {
+          "number": 26,
+          "subject": "The regulation of mines and mineral development, to the extent",
+          "description": "permitted by or under any law made by Parliament, within the Province."
+        },
+        {
+          "number": 27,
+          "subject": "Incorporation, regulation and judicial winding up of corporations",
+          "description": "with objects confined to the Province, excluding trading corporations, banking, insurance and financial corporations."
+        },
+        {
+          "number": 28,
+          "subject": "Regulation of unincorporated trading, literary, scientific, religious",
+          "description": "and other societies and associations. 29:1 Theatres and dramatic performances, music, cinemas, entertainments and amusements, excluding the sanctioning of cinematograph films for exhibition and public performances. 29:2 Encouragement and development of sports (other than national sports associations)."
+        },
+        {
+          "number": 30,
+          "subject": "Betting and gambling, other than imposition of licence fees and",
+          "description": "taxes."
+        },
+        {
+          "number": 31,
+          "subject": "Provincial debt",
+          "description": ""
+        },
+        {
+          "number": 32,
+          "subject": "Offences against statutes with respect to any of the matters specified",
+          "description": "in this his List."
+        },
+        {
+          "number": 33,
+          "subject": "Fees in respect of any of the matters in this List, excluding fees",
+          "description": "taken in any court."
+        },
+        {
+          "number": 34,
+          "subject": "Development, conservation and management of sites and facilities",
+          "description": "in the Province for the generation and promotion of electrical energy (other than hydro-electric power and power generated to feed the national grid)."
+        },
+        {
+          "number": 35,
+          "subject": "The borrowing of money to the extent permitted by or under any",
+          "description": "law made by Parliament. 36:1 Turnover taxes on wholesale and retail sales within such limits and subject to such exemptions as may be prescribed by law made by Parliament; 36:2 Betting taxes, and taxes on prize competitions and lotteries, other than National Lotteries and lotteries organized by the Government of Sri Lanka; 36:3 Licence taxes, arrack, toddy rents, tapping licence fees and liquor licence fees; 36:4 Motor vehicle licence fees within such limits and subject to such exemptions as may be prescribed by law made by Parliament; 36:5 Dealership licence taxes on drugs and other chemicals; 36:6 Stamp duties on transfer of properties, such as lands and motor cars; 36:7 Toll collections; 36:8 Fines imposed by courts; 36:9 Fees charged under the Medical Ordinance; 36:10 Fees charged under the Motor Traffic Act; 36:11 Departmental fees in respect of any of the matters specified in this List; 36:12 Fees under the Fauna and Flora Protection Ordinance; 36:13 Fees on lands alienated under the Land Development Ordinance and Crown Lands Ordinance; 36:14 Court fees, including stamp fees on documents produced in court; 36:15 Regulatory charges under the Weights and Measures Ordinance; 36:16 Land revenue, including the assessment and collection of revenue and maintenance of land records for revenue purposes; 36:17 Taxes on lands and buildings including the property of the State to the extent permitted by law made by Parliament; 36:18 Taxes on mineral rights within such limits and subject to such exemptions as may be prescribed by law made by Parliament; 36:19 Licensing fees on the possession, transport, purchase and sale of intoxicating liquors; 36:20 Other taxation within the Province in order to raise revenue for provincial purposes to the extent permitted by or under any law made by Parliament."
+        },
+        {
+          "number": 37,
+          "subject": "Protection of environment within the Province to the extent",
+          "description": "permitted by or under any law made by Parliament. APPENDIX I Law and Order"
+        },
+        {
+          "number": 1,
+          "subject": "The subject devolved shall be described as follows :",
+          "description": "Public Order and the exercise of Police powers as set out in this Appendix within the Province, but not including – (a) national defence; (b) national security; and (c) the use of any armed forces or any other forces under the control of the Government of Sri Lanka in aid of the civil power."
+        },
+        {
+          "number": 2,
+          "subject": "The I. G. P. shall be the head of the Sri Lanka Police Force, The Sri",
+          "description": "Lanka Police Force shall be divided into – (a) the National Division (including Special Units); and (b) a Provincial Division for each Province. 2:1 The National Division shall consist of the I.G.P., (D.I.G.G., S.S.P.P., A.S.P.P.,) and other ranks recruited at the national level. 2:2 A Provincial Division shall consist of the D.I.G., S.S.P.P., S.P.P and A.S.P.P., all seconded from the National Division and Provincial Assistant Superintendents of Police, Chief Inspectors, Inspectors, Sub-Inspectors, Sergeants and Constables recruited in the Province. Members of the Provincial Division shall be eligible for promotion to the National Division. 189[3. Recruitment to the National Police Division and promotion of Police Officers in the Provincial Divisions to the National Division, shall be made by the National Police Commission.] 3:1 The National Police Commission shall, before promoting any police Officer serving in any Provincial Division to the National Division, call for a Confidential Report on such Officer from the relevant Provincial Police Commission 189 - Inserted by the Seventeenth Amendment to the Constitution Sec. 23(1). and take the matters specified in such report into consideration in deciding whether to promote such Officer or not. 3:2 The Commission shall also be responsible for promotions, transfers and disciplinary control of members of the National Division other than the I.G.P. subject to paragraph 4:1 below. 3:3 It shall hear and determine appeals from officers seconded to Provincial Divisions against whom disciplinary action has been taken by Provincial Police Commissions. 3:4 It shall set standards for recruitment and promotion of Police Officers of all Divisions and such standards shall be uniform for all Provincial Divisions."
+        },
+        {
+          "number": 4,
+          "subject": "Recruitment to each Provincial Division shall be made by a",
+          "description": "Provincial Police Commission composed of three members, namely - (a) the D. I. G. of the Province; (b) a person nominated by the Public Service Commission in consultation with the President; and (c) a nominee of the Chief Minister of the Province. 4:1 A Provincial Police Commission shall be responsible for transfers, promotions and disciplinary control over officers in the Provincial Division; for promotion of Officers of the National Division seconded to the Provincial Division up to the rank of S.S.P.; and for transfer and disciplinary control over officers seconded to the Provincial Division, except the D.I.G.: Provided that any Officer of the National Division seconded to any Provincial Division against whom disciplinary action has been taken by a Provincial Police Commission, shall have the right to appeal to the National Police Commission, whose decision on such appeal shall be final."
+        },
+        {
+          "number": 5,
+          "subject": "The National Police Commission or a Provincial Police Commission",
+          "description": "shall be entitled to delegate such of its powers as may be prescribed to such other person or authority as may be prescribed."
+        },
+        {
+          "number": 6,
+          "subject": "The I.G.P. shall appoint a D.I.G. for each Province with the",
+          "description": "concurrence of the Chief Minister of the Province. However, where there is non agreement between the Inspector-General of Police and the Chief Minister, the matter 190[will be referred to the National Police Commission], who, after due consultations with the Chief Minister, shall make the appointment."
+        },
+        {
+          "number": 7,
+          "subject": "The cadres of Police Officers of all ranks of the National Division",
+          "description": "shall be fixed by the Government of Sri Lanka. The cadre of Officers and other ranks of each Provincial Division shall be fixed by the Provincial Administration 191[with the approval of the National Police Commission], having regard to – (a) the area of the Province; (b) population of the Province; and (c) such other criteria, as may be agreed to or prescribed. These principles shall be uniformly applied to all Provincial Divisions. 7:1 The cadres of the Provincial Divisions shall be fixed on ascertained principles such as population, area, number of Police Stations involved and other relevant considerations. These principles shall be applied to all Provincial Divisions without distinction. 190 - Substituted by the Seventeenth Amendment to the Constitution Sec. 23(2). 191 - Substituted by the Seventeenth Amendment to the Constitution Sec. 23(3). 7:2 The salary scales and perquisites of office enjoyed by the various ranks in the National and Provincial Divisions shall be determined by the Government of Sri Lanka after consultation with the Chief Ministers of the Provinces. The salary scales and perquisites of office as enjoyed by members of the Provincial Divisions shall apply uniformly to all Provincial Divisions."
+        },
+        {
+          "number": 8,
+          "subject": "The nature, type and quantity of fire-arms and ammunition and",
+          "description": "other equipment for the National Division shall be determined by the National Police Commission. The nature, type and quantity of fire-arms and ammunition and other equipment for all Provincial Divisions shall be determined by the National Police Commission after consultation with the Provincial Police Commission and uniform standards and principles shall be applied for all Provincial Divisions."
+        },
+        {
+          "number": 9,
+          "subject": "Recruitment to the National Division shall be made at the ranks",
+          "description": "of P.C., S.I., and A.S.P., Recruitment to the Provincial Division shall be made at the ranks of P.C., S.I., and P.A.S.P (rank referred to in paragraph 2:2 above). 9:1 Recruitment to the National Division shall be made by the National Police Commission and recruitment to the Provincial Division shall be made by the Provincial Police Commission having regard to the standards of recruitment and other criteria prescribed in this behalf: Provided also that a recruit may, on appointment, set out his preferences as to the Division in which he wishes to serve and that he shall, if possible, be posted to the Division of his choice, with the consent of the Division concerned. 9:2 The Government of Sri Lanka shall be responsible for the training of all recruits to and of members of all Divisions of the Sri Lanka Police Force. 192[The National Police Commission may, where he considers it necessary provide for alternate training for members of any Provincial Division]."
+        },
+        {
+          "number": 10,
+          "subject": "Members of the National Division and the Provincial Divisions",
+          "description": "shall wear the same uniforms and insignia of rank, provided that uniforms of the members of each Division shall bear a distinctive shoulder flash, indicating the Division to which he belongs. 10:1 There shall be one uniformed police force in each Province, comprising of the members of the Provincial Division and the officers seconded thereto. Members of the National Division shall ordinarily be in plain clothes provided that they may wear uniforms when performing any duties in respect of the maintenance or restoration of public order as set out in paragraph 12:2, 12:3 and 12:4. Provided also that the I.G.P. and such other Officers as may be specified shall ordinarily be attired in uniforms."
+        },
+        {
+          "number": 11,
+          "subject": "All Police Officers serving in units of the National Division and",
+          "description": "Provincial Divisions in any Province shall function under the direction and control of the D. I. G. of such Province. 11:1 The D. I. G. of the Province shall be responsible to and under the control of the Chief Minister thereof in respect of the maintenance of public order in the Province and the exercise of police powers in the Province as set out in this Schedule. 11:2 The provisions of paragraph 11:1 above are subject to the qualifications that – (a) upon the declaration of an emergency in the Province, the President may assume such powers and responsibilities of the Chief Minister and the Provincial Administration in respect of public order within the Province as he may, by regulation, provide; and 192 - Substituted by the Seventeenth Amendment to the Constitution Sec. 23(4). (b) where the President is of the opinion that the security of or public order in a Province is threatened by grave internal disturbance, he may, without the declaration of an emergency, but in consultation with the Chief Minister of such Province and subject to the provisions of the Public Security Ordinance, by order, deploy in aid of the civil power, any unit of the National Division, in the Province for the purpose of restoring public order: Provided that every such order shall cease to be in force as soon as the President is satisfied that public order has been restored or on the expiry of thirty days from the date of the order, whichever is earlier. 12:1 The Provincial Division shall be responsible for the preservation of public order within the Province and the prevention, detection and investigation of all offences (except the offences specified in the Schedule) and subject to the powers of the Attorney-General in terms of the Code of Criminal Procedure Act, the institution of prosecutions in the relevant Courts in respect of such offences. The National Division of the Sri Lanka Police Force shall be responsible for the prevention, detection and investigation of all offences specified in the Schedule and subject to the powers of the Attorney-General in terms of the Code of Criminal Procedure Act, for the institution of prosecutions in the relevant Courts in respect of such offences. 12:2 Where the Chief Minister seeks the assistance of the National Division to preserve public order within a Province, the I.G.P. shall deploy such personnel of the National Division as are necessary for the purpose and place them under the control of the D.I.G. of the Province. 12:3 Where a State of Emergency is declared in the Province, the I.G.P. may deploy such units of the National Division as he deems necessary in any Province for the restoration and maintenance of public order within such Province. 12:4 Any offence which may ordinarily be investigated by a Provincial Division may be investigated by the C.I.D. or any other unit of the National Division – (a) where the Chief Minister requests, that such investigation be undertaken by the C.I.D. or any other unit of the National Division; and (b) where the I.G.P. is of opinion that an investigation of such offence by the C.I.D. or any other unit of the National Division is necessary, in the public interest and directs, after consultation with the Chief Minister and the approval of the Attorney-General, that such offence be investigated by the C.I.D. or any other unit of the National Division."
+        },
+        {
+          "number": 13,
+          "subject": "The National Division shall perform all the functions vested in a",
+          "description": "Provincial Division, in any Province, for a period of one year or until a Provincial Division is established in such Province, whichever is earlier."
+        },
+        {
+          "number": 14,
+          "subject": "All Gazetted officers of the National Division and Provincial",
+          "description": "Division shall be required to attain the prescribed standard in Sinhala and Tamil. All Officers of the rank of A.S.P. and above shall also be required to attain the prescribed standard of English. Every recruit to the Sri Lanka Police Force shall have proficiency in his mother tongue. For the first promotion he shall acquire proficiency in a language other than his mother tongue. For the next promotion he shall acquire a knowledge of the third language. The three languages recognized for this purpose are Sinhala, Tamil and English. SCHEDULE List of Offences to be investigated by the National Police"
+        },
+        {
+          "number": 1,
+          "subject": "Offences against the State",
+          "description": ""
+        },
+        {
+          "number": 2,
+          "subject": "Offences relating to the Navy, Army and Air Force",
+          "description": ""
+        },
+        {
+          "number": 3,
+          "subject": "Offences relating to the Elections",
+          "description": ""
+        },
+        {
+          "number": 4,
+          "subject": "Offences relating to Coins, Currency and Government Stamps",
+          "description": ""
+        },
+        {
+          "number": 5,
+          "subject": "Any Offence committed against the President",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "subject": "Any Offence committed against a Public Officer, a Judicial Officer,",
+          "description": "or the Speaker, or the Prime Minister or a Minister, or a Member of the Judicial Service Commission, or a Member of the Public Service Commission or a Deputy Minister or a Member of Parliament or the Secretary General of Parliament or a Member of the President’s Staff or a Member of the Staff of the Secretary General of Parliament."
+        },
+        {
+          "number": 7,
+          "subject": "Any Offence relating to property belonging to the State or a",
+          "description": "State Corporation or Company or Establishment, the whole or part of the capital whereof has been provided by the State."
+        },
+        {
+          "number": 8,
+          "subject": "Any Offence prejudicial to National Security or the maintenance of",
+          "description": "Essential Services."
+        },
+        {
+          "number": 9,
+          "subject": "Any Offence under any law relating to any matter in the Reserve",
+          "description": "List other than such offences as the President may, by order published in the Gazette, exclude."
+        },
+        {
+          "number": 10,
+          "subject": "Any Offence in respect of which Courts in more than one Province",
+          "description": "have jurisdiction."
+        },
+        {
+          "number": 11,
+          "subject": "International Crimes",
+          "description": "APPENDIX II Land and Land Settlement State land shall continue to vest in the Republic and may be disposed of in accordance with Article 33(d) and written law governing this matter. Subject as aforesaid, land shall be Provincial Council Subject, subject to the following special provisions :–"
+        },
+        {
+          "number": 1,
+          "subject": "State land",
+          "description": "1:1 State land required for the purposes of the Government in a Province, in respect of a reserved or concurrent subject may be utilised by the Government in accordance with the laws governing the matter. The Government shall consult the relevant Provincial Council with regard to the utilisation of such land in respect of such subject. 1:2 Government shall make available to every Provincial Council State land within the Province required by such Council for a Provincial Council subject. The Provincial Council shall administer, control and utilise such State land, in accordance with the laws and statutes governing the matter. 1:3 Alienation or disposition of the State land within a Province to any citizen or to any organisation shall be by the President, on the advice of the relevant Provincial Council, in accordance with the laws governing the matter."
+        },
+        {
+          "number": 2,
+          "subject": "Inter-Provincial Irrigation and Land Development Projects",
+          "description": "2:1 Such projects would comprise irrigation and land development schemes – (a) within the Province initiated by the State and which utilize water from rivers flowing through more than one Province; a Provincial Council however, may also initiate irrigation and land development schemes within its Province utilizing water from such rivers; (b) within the Province which utilize water through diversions from water systems from outside the Province; and (c) all schemes where the command area falls within two or more Provinces such as the Mahaweli Development Project. 2:2 These projects will be the responsibility of the Government of Sri Lanka. 2:3 The principles and criteria regarding the size of holdings of agricultural and homestead lands arising out of these projects will be determined by the Government of Sri Lanka in consultation with the Provincial Councils. 2:4 The selection of allottees for such lands will be determined by the Government of Sri Lanka having regard to settler selection criteria including degree of landlessness, income level, size of family and agricultural background of the applicants. The actual application of these principles, selection of allottees and other incidental matters connected thereto will be within the powers of the Provincial Councils. 2:5 The distribution of all allotments of such land in such projects will be on the basis of national ethnic ratio. In the distribution of allotments according to such ratios, priority will be given to persons who are displaced by the project, landless of the District in which the project is situated and thereafter the landless of the Province. 2:6 Where the members of any community do not, or are unable to take their entitlements of allotments from any such project, they would be entitled to receive an equivalent number of allotments in another Inter-Provincial Irrigation or Land Development Scheme. This unused quota should be utilized within a given time-frame. 2:7 The distribution of allotments in such projects on the basis of the aforesaid principles would be done as far as possible so as not to disturb very significantly the demographic pattern of the Province and in accordance with the principle of ensuring community cohesiveness in human settlements. 2:8 The administration and management of such projects will be done by the Government of Sri Lanka."
+        },
+        {
+          "number": 3,
+          "subject": "National Land Commission",
+          "description": "3:1 The Government of Sri Lanka shall establish a National Land Commission which would be responsible for the formulation of national policy with regard to the use of State land. This Commission will include representatives of all Provincial Councils in the Island. 3:2 The National Land Commission will have a Technical Secretariat representing all the relevant disciplines required to evaluate the physical as well as the socio-economic factors that are relevant to natural resources management. 3:3 National policy on land use will be based on technical aspects (not on political or communal aspects), and the Commission will lay down general norms in regard to the use of land, having regard to soil, climate, rainfall, soil erosion, forest cover, environmental factors, economic viability, &c. 3:4 In the exercise of the powers devolved on them, the powers shall be exercised by the Provincial Councils having due regard to the national policy formulated by the National Land Commission. APPENDIX III Education"
+        },
+        {
+          "number": 1,
+          "subject": "Provision of facilities for all State Schools other than specified",
+          "description": "schools (Specified Schools will be National Schools, Special Schools for Service Personnel and schools for specified development schemes)."
+        },
+        {
+          "number": 2,
+          "subject": "Supervision of the management of",
+          "description": "(a) all pre-schools; and (b) all State schools other than specified schools indicated above. (In order to ensure standards the Ministry of Education will retain the right to inspect and supervise the management of schools)."
+        },
+        {
+          "number": 3,
+          "subject": "The transfer and disciplinary control of all educational personnel,",
+          "description": "i.e. Teachers, Principals and Education Officers, Officers belonging to a National Service but serving the Provincial Authority on secondment will have the right of appeal to the Public Service Commission. Officers belonging to the Provincial Public Service will have a right to appeal to the Public Service Commission against dismissal."
+        },
+        {
+          "number": 4,
+          "subject": "Recruitment into the Teaching Service of those with diplomas and",
+          "description": "degrees, from Colleges of Education and Universities, recognised as teaching qualifications."
+        },
+        {
+          "number": 5,
+          "subject": "Until adequate numbers of these categories are available",
+          "description": "recruitment into the Teaching Service will be on the results of recruitment examinations conducted by the Public Service Commission. On the results of these examinations interviews and selection will be conducted together with the Provincial Authorities."
+        },
+        {
+          "number": 6,
+          "subject": "Appointment of Principals of all schools other than those in",
+          "description": "1A, B, C categories. (Criteria will be laid down by the Minister of Education)."
+        },
+        {
+          "number": 7,
+          "subject": "Appointment of Principals of 1A, B, C schools will be by the",
+          "description": "Secretary to the Ministry of the Minister in charge of the subject of Education of the Public Service Commission."
+        },
+        {
+          "number": 8,
+          "subject": "Training of teachers and other educational personnel will come",
+          "description": "within the purview of the National Institute of Education. Provincial Authorities will indicate their needs to the National Institute of Education."
+        },
+        {
+          "number": 9,
+          "subject": "Appointment of Provincial Boards of Education which will",
+          "description": "have the advisory functions, will be the responsibility of the Minister of Education. However, this will be done with the concurrence of the Chief Minister of the Provincial Authority."
+        },
+        {
+          "number": 10,
+          "subject": "Provincial Authorities will establish School Boards conforming",
+          "description": "to the specifications laid down by the Ministry of Education."
+        },
+        {
+          "number": 11,
+          "subject": "Provincial Authorities will supervise the working of School",
+          "description": "Boards."
+        },
+        {
+          "number": 12,
+          "subject": "Preparation of plans (educational development plan and",
+          "description": "annual implementation plan) will be the responsibility of the Provincial Authority."
+        },
+        {
+          "number": 13,
+          "subject": "Implementation of the Annual Education Development Plan",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "subject": "Appraisal of the performance of Principals, Teachers and",
+          "description": "Education Officers."
+        },
+        {
+          "number": 15,
+          "subject": "Conducting of in-service training programmes for which prior",
+          "description": "approval of the National Institute of Education has been obtained."
+        },
+        {
+          "number": 16,
+          "subject": "Conducting of local examinations approved by the",
+          "description": "Commissioner-General of Examinations."
+        },
+        {
+          "number": 17,
+          "subject": "Implementation of non-formal education programmes",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "subject": "Registration and supervision of pre-schools",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "subject": "Obtaining the approval of the National Institute of Education for",
+          "description": "local variations in the primary curriculum and selected subjects in the secondary curriculum."
+        },
+        {
+          "number": 20,
+          "subject": "Construction and maintenance of educational buildings,",
+          "description": "libraries and playgrounds."
+        },
+        {
+          "number": 21,
+          "subject": "Procuring and distribution of teaching aids, visual aids and",
+          "description": "audio visual materials, furniture and other equipment."
+        },
+        {
+          "number": 22,
+          "subject": "Procuring and distribution of science equipment other than",
+          "description": "certain specified items indicated by the Ministry."
+        },
+        {
+          "number": 23,
+          "subject": "Production and distribution of school text books after approval",
+          "description": "by the Ministry."
+        },
+        {
+          "number": 24,
+          "subject": "Organization and development of school libraries in accordance",
+          "description": "with guidelines given by the National Library Services Board. (Above based on the recommendations of Committee I of the Political Parties Conference)"
+        }
+      ]
+    },
+    {
+      "list_id": "II",
+      "name": "Reserved List",
+      "items": [
+        {
+          "number": 1,
+          "subject": "National Policy on all Subjects and Functions.",
+          "description": ""
+        },
+        {
+          "number": 2,
+          "subject": "Defence and National Security: Internal Security; Law and order and preven-",
+          "description": "tion and detection of crime except do the extent specified in item 1 of List I. This would include – (a) Defence of Sri Lanka and every part thereof including prepara- tion for defence and all such acts as may be conducive in times of war to its prosecution and after its termination, to effective de- mobilisation; (b) Naval, military and air forces; any other armed forces of the Gov- ernment of Sri Lanka; (c) Deployment of any armed force of the Government of Sri Lanka or any other force subject to the control of the Government of Sri"
+        },
+        {
+          "number": 3,
+          "subject": "Lanka or any contingent or unit thereof in any Province in aid of",
+          "description": "the civil power; powers, jurisdiction, privileges and liabilities of the members of such forces while on such deployment; (d) Delimitation of cantonment areas, local self-government in such areas, the constitution and powers within such areas of cantonment au- thorities and the regulation of house accommodation (including the control of rents) in such areas; (e) Naval, military and air force works; (f) Arms, firearms, ammunition and explosives; (g) Atomic energy and mineral resources necessary for its produc- tion; (h) Industries declared by Parliament by law to be necessary for the purpose of defence or for the prosecution of war; (i) Criminal Investigation Department; (j) Preventive detention for reasons connected with Defence, Foreign"
+        },
+        {
+          "number": 4,
+          "subject": "Affairs, or the security of Sri Lanka, persons subjected to such",
+          "description": "detention; and (k) Extension of the powers and jurisdiction of members of a police force belonging to any Province to any area outside that Province, but not so as to enable the police of one Province to exercise pow- ers and jurisdiction in any area outside that Province without the consent of the Provincial Council in which such area is situated; extension of the powers and jurisdiction of members of a police force belonging to any Province to railway areas outside that"
+        },
+        {
+          "number": 5,
+          "subject": "Province.",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "subject": "Foreign Affairs.",
+          "description": "This would include – (a) Foreign Affairs; all matters which bring the Government of Sri"
+        },
+        {
+          "number": 7,
+          "subject": "Lanka into relation with any foreign country;",
+          "description": "(b) Diplomatic, consular and trade representation; (c) United Nations Organization; (d) Participation in international conferences, associations and other bodies and implementing of decisions made thereat; (e) Entering into treaties and agreements with foreign countries and implementing treaties, agreements and conventions with foreign countries; (f) War and peace; and (g) Foreign jurisdiction."
+        },
+        {
+          "number": 8,
+          "subject": "Posts and Telecommunications; Broadcasting; Television.",
+          "description": "This would include – (a) Posts and telegraphs; telephones; wireless, broadcasting and other like forms of communications; and (b) Sanctioning of cinematograph films for exhibition."
+        },
+        {
+          "number": 9,
+          "subject": "Justice in so far as it relates to the judiciary and the courts structure.",
+          "description": "This would include – (a) Constitution, organisation, jurisdiction and powers of the"
+        },
+        {
+          "number": 10,
+          "subject": "Supreme Court (including contempt of such Court) and the fees",
+          "description": "taken therein; persons entitled to practise before the Supreme"
+        },
+        {
+          "number": 11,
+          "subject": "Court, Court of Appeal and other Courts ;",
+          "description": "(b) Constitution, organisation, jurisdiction and powers of the Court of"
+        },
+        {
+          "number": 12,
+          "subject": "Appeal and the fees taken therein; and",
+          "description": "(c) Jurisdiction and powers of all Courts, except the Supreme Court and the Court of Appeal."
+        },
+        {
+          "number": 13,
+          "subject": "Finance in relation to national revenue, monetary policy and external",
+          "description": "resources;customs. This would include – (a) Public debt of the Government of Sri Lanka; (b) Currency, coinage and legal tender; foreign exchange; (c) Foreign loans; (d) Central Bank; (e) National Savings Bank ; (f) Lotteries organised by the Government of Sri Lanka or a"
+        },
+        {
+          "number": 14,
+          "subject": "Provincial Council;",
+          "description": "(g) Banking; (h) Bills of exchange, cheques, promissory notes and other like instruments; (i) Insurance; (j) Stock exchanges and future markets; (k) Audit of the accounts of the Government of Sri Lanka and of the"
+        },
+        {
+          "number": 15,
+          "subject": "Provinces;",
+          "description": "(l) Taxes on income, capital and wealth of individuals, compa- nies and corporations; (m) Customs duties, including import and export duties and excise duties; (n) Turnover taxes and stamp duties, except to the extent specified in"
+        },
+        {
+          "number": 16,
+          "subject": "List I;",
+          "description": "(o) Any other tax or fee not specified in List I."
+        },
+        {
+          "number": 17,
+          "subject": "Foreign Trade; Inter-Province Trade and Commerce.",
+          "description": "This would include – (a) Trade and commerce with foreign countries; import and export across customs frontiers; definition of customs frontiers; and (b) Inter-province trade and commerce."
+        },
+        {
+          "number": 18,
+          "subject": "Ports and Harbours.",
+          "description": "This would include – (a) Ports declared by or under law made by Parliament or existing law to be major ports including their delimitation and the constitution and powers of port authorities therein; and (b) Port quarantine, including hospitals connected therewith; seamen’s and marine hospitals."
+        },
+        {
+          "number": 19,
+          "subject": "Aviation and Airports.",
+          "description": "This would include –"
+        },
+        {
+          "number": 20,
+          "subject": "Airways; aircraft and air navigation; provision of aerodromes;",
+          "description": "regulation and organisation of air traffic and of aerodromes; provision for aeronautical education and training and regulation of such education and training provided by Provinces and other agencies."
+        },
+        {
+          "number": 21,
+          "subject": "National Transport",
+          "description": "This would include – (a) Railways; (b) Highways declared by or under law made by Parliament to be na- tional highways; and (c) Carriage of passengers and goods by railway, land, sea or air or by national waterways in mechanically propelled vessels."
+        },
+        {
+          "number": 22,
+          "subject": "Rivers and Waterways; Shipping and Navigation; Maritime zones including",
+          "description": ""
+        },
+        {
+          "number": 23,
+          "subject": "Historical Waters, Territorial Waters, exclusive Economic zone and Conti-",
+          "description": "nental Shelf and Internal Waters ; State Lands and Foreshore, Except to the"
+        },
+        {
+          "number": 24,
+          "subject": "Extent Specified in Item 18 of List I.",
+          "description": "This would include – (a) Piracies and crimes committed on the high seas or in the air; offences against the law of nations committed on land or the high seas or in the air; (b) Shipping and navigation on inland waterways, declared by"
+        },
+        {
+          "number": 25,
+          "subject": "Parliament by law to be national waterways, as regards",
+          "description": "mechanically propelled vessels; the rule of the road on such waterways; (c) Maritime shipping and navigation, including shipping and navigation on tidal waters; provision of education and training for the mercantile marine and regulation of such education and training provided by Provinces and other agencies; (d) Lighthouses, including lightships, beacons and other provision for the safety of shipping and aircraft; (e) Regulation and development of inter province rivers; and river valleys to the extent to which such regulation and development under the control of the Government of Sri Lanka is declared by"
+        },
+        {
+          "number": 26,
+          "subject": "Parliament by law to be expedient in the public interest;",
+          "description": "(f) Fishing and fisheries beyond territorial waters; and (g) Property of the Government of Sri Lanka and the revenue therefrom, but as regards property situated in a province, subject to statutes made by the Province save in so far as Parliament by law otherwise provides."
+        },
+        {
+          "number": 27,
+          "subject": "Minerals and Mines.",
+          "description": "This would include – (a) Regulation and development of oil fields and mineral oil resources; petroleum and petroleum products; other liquids and substances declared by Parliament by law to be dangerously inflammable; and (b) Regulation of mines and mineral development to the extent to which such regulation and development under the control of the"
+        },
+        {
+          "number": 28,
+          "subject": "Government of Sri Lanka is declared by Parliament by law to be",
+          "description": "expedient in the public interest."
+        },
+        {
+          "number": 29,
+          "subject": "Immigration and Emigration and Citizenship.",
+          "description": "This would include – (a) Citizenship, Naturalization and Aliens; (b) Extradition; and (c) Admission into and emigration and expulsion from, Sri Lanka; passports and visas."
+        },
+        {
+          "number": 30,
+          "subject": "Elections Including Presidential, Parliamentary, Provincial Councils and",
+          "description": ""
+        },
+        {
+          "number": 31,
+          "subject": "Local Authorities.",
+          "description": "This would include –"
+        },
+        {
+          "number": 32,
+          "subject": "Elections to Parliament, Provincial Councils, Local Authorities and to",
+          "description": "the Office of President; the Department of Elections."
+        },
+        {
+          "number": 33,
+          "subject": "Census and Statistics.",
+          "description": "This would include – (a) Census; and (b) Inquiries, surveys and statistics for the purposes of any of the matters in this List."
+        },
+        {
+          "number": 34,
+          "subject": "Professional Occupations and Training.",
+          "description": "This would include – (a) Institutions, such as Universities, declared by Parliament by law to be institutions of national importance; (b) Institutions for scientific or technical education by the"
+        },
+        {
+          "number": 35,
+          "subject": "Government of Sri Lanka wholly or in part and declared by",
+          "description": ""
+        },
+        {
+          "number": 36,
+          "subject": "Parliament by law to be institutions of national importance;",
+          "description": "(c) Provincial agencies and institutions for – (i) professional, vocational or technical training, including the training of police officers; or (ii) the promotion of special studies or research; or (iii) scientific or technical assistance in the investigation or detec- tion of crime; and (d) Co-ordination and determination of standards in institutions for higher education or research and scientific and technical institutions."
+        },
+        {
+          "number": 37,
+          "subject": "National Archives; Archaeological Activities and Sites and Antiquities",
+          "description": "declared by or under any law made by Parliament to be of National"
+        },
+        {
+          "number": 38,
+          "subject": "Importance.",
+          "description": "This would include –"
+        },
+        {
+          "number": 39,
+          "subject": "Ancient and historical monuments and records and archaeological sites",
+          "description": "and remains declared by or under law made by Parliament to be of national importance."
+        },
+        {
+          "number": 40,
+          "subject": "All Subjects and Functions not Specified in List I or List III including –",
+          "description": "(a) Pilgrimages to places outside Sri Lanka; (b) Incorporation, regulation and winding up of trading corporations, including banking, insurance and financial corporations but not including co-operative societies; (c) Incorporation, regulation and winding up of corporations, whether trading or not, with objects not confined to one province, but not including universities; (d) Patents, inventions and designs; copyright, trade marks and merchandise marks; (e) Establishment of standards of weight and measure; (f) Establishment of standards of quality for goods to be exported out of Sri Lanka or transported from one province to another; (g) Industries, the control of which by the Government of Sri Lanka is declared by Parliament by law to be expedient in the public interest; (h) Regulation of labour and safety in mines; (i) Manufacture, supply and distribution of salt by agencies of the"
+        },
+        {
+          "number": 41,
+          "subject": "Government of Sri Lanka ; regulation and control of manufacture,",
+          "description": "supply and distribution of salt by other agencies; (j) Cultivation, manufacture and sale for export, of opium; (k) Industrial disputes concerning employees of the Government of"
+        },
+        {
+          "number": 42,
+          "subject": "Sri Lanka;",
+          "description": "(l) Institutions such as Museums and War Memorials financed by the Government of Sri Lanka wholly or in part and declared by"
+        },
+        {
+          "number": 43,
+          "subject": "Parliament by law to be institutions of national importance;",
+          "description": "(m) The Survey of Sri Lanka, the Geological, Botanical, Zoological and Anthropological Surveys of Sri Lanka; Meteorological organizations; (n) National Public Services; National Public Service Commission; (o) Pensions, that is to say, pensions payable by the Government of"
+        },
+        {
+          "number": 44,
+          "subject": "Sri Lanka or out of the Consolidated Fund;",
+          "description": "(p) Salaries and allowances of Members of Parliament and the Speaker and Deputy Speaker of Parliament; (q) Powers, privileges and immunities of Parliament and of the members and the Committees of Parliament; enforcement of attendance of persons for giving evidence or producing documents before Committees of Parliament or Commissions appointed by Parliament; (r) Emoluments, allowances, privileges and rights in respect of leave of absence, of the President and Governors; salaries and allowances of the Ministers of the Government of Sri Lanka; the salaries, allowances and rights in respect of leave of absence and other conditions of service of the Auditor-General; (s) Inter-Province migration; inter-province quarantine; (t) Offences against laws with respect to any of the matters in this"
+        },
+        {
+          "number": 45,
+          "subject": "List; and",
+          "description": "(u) Fees in respect of any of the matters in this List, but not including fees taken in any Court."
+        }
+      ]
+    },
+    {
+      "list_id": "III",
+      "name": "Concurrent List",
+      "items": [
+        {
+          "number": 1,
+          "subject": "Planning",
+          "description": "1:1 Formulation and appraisal of plan implementation strategies at the provincial level; 1:2 Progress control; 1:3 Monitoring progress of public and private sector investment programmes; 1:4 The evaluation of the performance of institutions and enter- prises engaged in economic activities; 1:5 The presentation of relevant data in the achievement of plan targets; 1:6 The dissemination of information concerning achievement of plan targets; 1:7 Publicity of implementation programmes; 1:8 Manpower planning and employment Data Bank; 1:9 Nutritional planning and programmes."
+        },
+        {
+          "number": 2,
+          "subject": "and 3. Education and Educational Services",
+          "description": "Education, except to the extent specified in items 3 and 4 of List 1."
+        },
+        {
+          "number": 4,
+          "subject": "Higher Education",
+          "description": "4:1 The establishment and maintenance of new Universities. 4:2 The establishment of degree awarding institutions under the Universities (Amendment) Act, No. 07 of 1985 and other institutions for tertiary, technical and post-school education and training."
+        },
+        {
+          "number": 5,
+          "subject": "National Housing and Construction",
+          "description": "The promotion of integrated plan- ning and implementation of economic, social and physical development of urban development areas."
+        },
+        {
+          "number": 6,
+          "subject": "Acquisition and requisitioning of Property",
+          "description": ""
+        },
+        {
+          "number": 7,
+          "subject": "Social Services and Rehabilitation",
+          "description": "7:1 Relief, rehabilitation and resettlement of displaced persons; 7:2 Relief of distress due to floods, droughts, epidemics or other exceptional causes and rehabilitation and resettlement of those affected; 7:3 Restoration, reconstruction and rehabilitation of towns, villages, public institutions and properties, industries, business places, places of worship and other properties destroyed or damaged, grant of compensation or relief to persons or institutions who have sustained loss or damage and the reorganization of civil life."
+        },
+        {
+          "number": 8,
+          "subject": "Agricultural and Agrarian Services",
+          "description": "8:1 Establishment and promotion of agro-linked industries, the establishment and maintenance of farms and supervision of private nurseries; 8:2 Soil conservation; 8:3 Plant pests."
+        },
+        {
+          "number": 9,
+          "subject": "Health",
+          "description": "9:1 Schools for training of Auxiliary Medical Personnel ; 9:2 The supervision of private medical care, control of nursing homes and of diagnostic facilities within a Province; 9:3 Population control and family planning ; 9:4 Constitution of Provincial Medical Boards."
+        },
+        {
+          "number": 10,
+          "subject": "Registration of births, marriages and deaths",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "subject": "Renaming of Towns and Villages",
+          "description": ""
+        },
+        {
+          "number": 12,
+          "subject": "Private lotteries within the Province",
+          "description": ""
+        },
+        {
+          "number": 13,
+          "subject": "Festivals and Exhibitions",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "subject": "Rationing of food and maintenance of food stocks",
+          "description": ""
+        },
+        {
+          "number": 15,
+          "subject": "Co-operatives",
+          "description": "Co-operative Banks."
+        },
+        {
+          "number": 16,
+          "subject": "Surveys",
+          "description": "For the purpose of any of the matter enumerated in the Provincial or Concurrent List."
+        },
+        {
+          "number": 17,
+          "subject": "Irrigation",
+          "description": "17:1 Water storage and management, drainage and embankments, flood protection, planning of water resources; 17:2 Services provided for inter-provincial land and irrigation schemes, such as those relating to rural development, health, education, vocational training, co-operatives and other facili- ties."
+        },
+        {
+          "number": 18,
+          "subject": "Social Forestry and protection of wild animals and birds",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "subject": "Fisheries - Other than fishing beyond territorial waters",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "subject": "Animal Husbandry",
+          "description": "20:1 Production, processing, distribution and sale of livestock and livestock products; 20:2 Veterinary training services and research, inclusive of the provision of science laboratories and science equipment; 20:3 Animal breeding, care and health; 20:4 The establishment of pastures."
+        },
+        {
+          "number": 21,
+          "subject": "Employment",
+          "description": "21:1 Employment planning at Provincial level; 21:2 Special Employment programmes relating to the Province; 21:3 Promotion of youth employment activities relating to the Province; 21:4 Technical Manpower Development Programmes in relation to the Province."
+        },
+        {
+          "number": 22,
+          "subject": "Tourism",
+          "description": "Development and control of the Tourist Industry in the Province."
+        },
+        {
+          "number": 23,
+          "subject": "Trade and commerce in, and the production, supply and distribution",
+          "description": "of – (a) the products of any industry where the control of such indus- try by the Government is declared by Parliament by law to be expedient in the public interest and imported goods of the same kind as such products; and (b) foodstuffs and cattle fodder."
+        },
+        {
+          "number": 24,
+          "subject": "Newspapers, books and periodicals and printing presses",
+          "description": ""
+        },
+        {
+          "number": 25,
+          "subject": "Offences against statutes with respect to any matters specified in",
+          "description": "this List."
+        },
+        {
+          "number": 26,
+          "subject": "Fees in respect of any of the matters in this List, excluding",
+          "description": "fees taken in any Court."
+        },
+        {
+          "number": 27,
+          "subject": "Charities and charitable institutions, charitable and religious",
+          "description": "endowments and religious institutions."
+        },
+        {
+          "number": 28,
+          "subject": "Price control",
+          "description": ""
+        },
+        {
+          "number": 29,
+          "subject": "Inquiries and statistics for the purpose of any of the matters in",
+          "description": "this List or in the Provincial Council List."
+        },
+        {
+          "number": 30,
+          "subject": "Adulteration of foodstuffs and other goods",
+          "description": ""
+        },
+        {
+          "number": 31,
+          "subject": "Drugs and Poisons",
+          "description": ""
+        },
+        {
+          "number": 32,
+          "subject": "Extension of electrification within the Province and the pro-",
+          "description": "motion and regulation of the use of electricity within the Province."
+        },
+        {
+          "number": 33,
+          "subject": "Protection of the environment",
+          "description": ""
+        },
+        {
+          "number": 34,
+          "subject": "Archaeological sites and remains, other than those declared",
+          "description": "by or under any law made by Parliament to be of national importance."
+        },
+        {
+          "number": 35,
+          "subject": "Prevention of the extension from one Province to another of",
+          "description": "infectious or contagious diseases or pests affecting human beings, animals or plants."
+        },
+        {
+          "number": 36,
+          "subject": "Pilgrimages.]",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "original_doc_page_num": 274
+}

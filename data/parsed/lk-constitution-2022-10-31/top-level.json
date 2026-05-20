@@ -161,5 +161,136 @@
       "file": "chapter-024.json"
     }
   ],
-  "schedules": []
+  "schedules": [
+    {
+      "number": 1,
+      "title": "",
+      "file": "schedule-1.json"
+    },
+    {
+      "number": 2,
+      "title": "",
+      "file": "schedule-2.json"
+    },
+    {
+      "number": 3,
+      "title": "",
+      "file": "schedule-3.json"
+    },
+    {
+      "number": 4,
+      "title": "",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 5,
+      "title": "",
+      "file": "schedule-5.json"
+    },
+    {
+      "number": 6,
+      "title": "",
+      "file": "schedule-6.json"
+    },
+    {
+      "number": 7,
+      "title": "",
+      "file": "schedule-7.json"
+    },
+    {
+      "number": 8,
+      "title": "",
+      "file": "schedule-8.json"
+    },
+    {
+      "number": 9,
+      "title": "Appendix I .... .... 257",
+      "file": "schedule-9.json"
+    },
+    {
+      "number": 7,
+      "title": "",
+      "file": "schedule-7.json"
+    },
+    {
+      "number": 4,
+      "title": "(7) Upon such assumption of office a Governor shall",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 4,
+      "title": "",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 9,
+      "title": "",
+      "file": "schedule-9.json"
+    },
+    {
+      "number": 7,
+      "title": "body if any, as is referred to in that Article,",
+      "file": "schedule-7.json"
+    },
+    {
+      "number": 7,
+      "title": "",
+      "file": "schedule-7.json"
+    },
+    {
+      "number": 4,
+      "title": "First 161. Notwithstanding anything to the contrary in any",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 4,
+      "title": "Supreme Court, Court of Appeal, High Court",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 1,
+      "title": "Names of Administrative Districts",
+      "file": "schedule-1.json"
+    },
+    {
+      "number": 2,
+      "title": "THE NATIONAL FLAG",
+      "file": "schedule-2.json"
+    },
+    {
+      "number": 3,
+      "title": "Words and Music of the National Anthem",
+      "file": "schedule-3.json"
+    },
+    {
+      "number": 4,
+      "title": "",
+      "file": "schedule-4.json"
+    },
+    {
+      "number": 5,
+      "title": "Clerks",
+      "file": "schedule-5.json"
+    },
+    {
+      "number": 6,
+      "title": "",
+      "file": "schedule-6.json"
+    },
+    {
+      "number": 7,
+      "title": "do solemnly declare and affirm",
+      "file": "schedule-7.json"
+    },
+    {
+      "number": 8,
+      "title": "Provinces",
+      "file": "schedule-8.json"
+    },
+    {
+      "number": 9,
+      "title": "",
+      "file": "schedule-9.json"
+    }
+  ]
 }

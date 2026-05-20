@@ -1,0 +1,32 @@
+{
+  "number": 5,
+  "title": "Clerks",
+  "content_type": "list",
+  "referred_by_article": "111 M",
+  "description": null,
+  "text": null,
+  "items": [
+    {
+      "number": 1,
+      "value": "Deputy Fiscals"
+    },
+    {
+      "number": 2,
+      "value": "Interpreters"
+    },
+    {
+      "number": 3,
+      "value": "Stenographers"
+    },
+    {
+      "number": 4,
+      "value": "Typists"
+    },
+    {
+      "number": 5,
+      "value": "Binders"
+    }
+  ],
+  "lists": [],
+  "original_doc_page_num": 270
+}

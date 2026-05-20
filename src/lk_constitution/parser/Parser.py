@@ -10,6 +10,7 @@ from .FootnoteUtils import collect_page_footnotes
 from .Marginalia import build_marginalia_map
 from .MetadataPreambleParser import parse_metadata, parse_preamble
 from .PageExtractor import extract_body_pages, extract_full_pages
+from .ScheduleParser import parse_schedules
 from .TextUtils import _cleaned_lines, _write_json
 
 
@@ -39,6 +40,7 @@ class Parser:
         full_cleaned = _cleaned_lines(pages)
         page_footnotes = collect_page_footnotes(full_cleaned)
         chapters = parse_chapters(body_pages, marginalia, page_footnotes)
+        schedules = parse_schedules(pages)
         return Constitution(
             title=meta["title"],
             edition=meta["edition"],
@@ -47,6 +49,7 @@ class Parser:
             published_by=meta["published_by"],
             preamble=preamble,
             chapters=chapters,
+            schedules=schedules,
         )
 
     def write(

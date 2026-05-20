@@ -1,0 +1,112 @@
+{
+  "number": 1,
+  "title": "Names of Administrative Districts",
+  "content_type": "list",
+  "referred_by_article": "5",
+  "description": null,
+  "text": null,
+  "items": [
+    {
+      "number": 1,
+      "value": "Colombo"
+    },
+    {
+      "number": 2,
+      "value": "Gampaha"
+    },
+    {
+      "number": 3,
+      "value": "Kalutara"
+    },
+    {
+      "number": 4,
+      "value": "Kandy"
+    },
+    {
+      "number": 5,
+      "value": "Matale"
+    },
+    {
+      "number": 6,
+      "value": "Nuwara - Eliya"
+    },
+    {
+      "number": 7,
+      "value": "Galle"
+    },
+    {
+      "number": 8,
+      "value": "Matara"
+    },
+    {
+      "number": 9,
+      "value": "Hambantota"
+    },
+    {
+      "number": 10,
+      "value": "Jaffna"
+    },
+    {
+      "number": 11,
+      "value": "Kilinochchi"
+    },
+    {
+      "number": 12,
+      "value": "Mannar"
+    },
+    {
+      "number": 13,
+      "value": "Vavuniya"
+    },
+    {
+      "number": 14,
+      "value": "Mullaitivu"
+    },
+    {
+      "number": 15,
+      "value": "Batticaloa"
+    },
+    {
+      "number": 16,
+      "value": "Ampara"
+    },
+    {
+      "number": 17,
+      "value": "Trincomalee"
+    },
+    {
+      "number": 18,
+      "value": "Kurunegala"
+    },
+    {
+      "number": 19,
+      "value": "Puttalam"
+    },
+    {
+      "number": 20,
+      "value": "Anuradhapura"
+    },
+    {
+      "number": 21,
+      "value": "Polonnaruwa"
+    },
+    {
+      "number": 22,
+      "value": "Badulla"
+    },
+    {
+      "number": 23,
+      "value": "Moneragala"
+    },
+    {
+      "number": 24,
+      "value": "Ratnapura"
+    },
+    {
+      "number": 25,
+      "value": "Kegalle"
+    }
+  ],
+  "lists": [],
+  "original_doc_page_num": 262
+}
