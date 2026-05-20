@@ -1,3 +1,4 @@
-from .Parser import Parser
+# lk_constitution.parser (auto generate by build_inits.py)
+# flake8: noqa: F408
 
-__all__ = ["Parser"]
+from lk_constitution.parser.Parser import Parser

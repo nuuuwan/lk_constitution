@@ -52,7 +52,8 @@ _AMEND_REF_RE = re.compile(r"\d+\[|\]")
 _NUM_CLAUSE_RE = re.compile(r"\(([1-9][0-9]?)\)\s+")
 # Top-level alpha clause marker: (a)-(h) — avoid (i)/(v)/(x) (Roman numerals)
 _ALPHA_CLAUSE_RE = re.compile(r"\(([a-hj-uw-z])\)\s+")
-# Signals that the main constitution body has ended (schedules / appendix follow)
+# Signals that the main constitution body has ended (schedules / appendix
+# follow)
 _BODY_END_RE = re.compile(r"Other Consequential Amendments", re.IGNORECASE)
 
 # Column x-boundaries separating body text from marginalia column.
@@ -70,9 +71,7 @@ _ART_X_EVEN = (165.0, 220.0)
 _ART_NUM_WORD_RE = re.compile(r"^\d+[A-Z]?\.$")
 
 # ---- Roman numeral helpers -----------------------------------------------
-_ROMAN_VALUES: dict[str, int] = {
-    "I": 1, "V": 5, "X": 10, "L": 50, "C": 100
-}
+_ROMAN_VALUES: dict[str, int] = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100}
 
 
 def _roman_to_int(s: str) -> int:
@@ -121,8 +120,7 @@ class Parser:
         if self._pages is None:
             with pdfplumber.open(self.pdf_path) as pdf:
                 self._pages = [
-                    (p.page_number, p.extract_text() or "")
-                    for p in pdf.pages
+                    (p.page_number, p.extract_text() or "") for p in pdf.pages
                 ]
         return self._pages
 
@@ -141,7 +139,7 @@ class Parser:
                     w = p.width
                     if pn % 2 == 1:  # odd page — margin on right
                         body = p.crop((0, 0, _MARGIN_X_ODD, h))
-                    else:            # even page — margin on left
+                    else:  # even page — margin on left
                         body = p.crop((_MARGIN_X_EVEN, 0, w, h))
                     result.append((pn, body.extract_text() or ""))
             self._body_pages = result
@@ -161,15 +159,19 @@ class Parser:
                 if is_odd:
                     body_words = [w for w in words if w["x0"] < _MARGIN_X_ODD]
                     margin_words = [
-                        w for w in words
+                        w
+                        for w in words
                         if w["x0"] >= _MARGIN_X_ODD
                         and _PAGE_HEADER_BOTTOM < w["top"] < _PAGE_FOOTER_TOP
                     ]
                     art_x_min, art_x_max = _ART_X_ODD
                 else:
-                    body_words = [w for w in words if w["x0"] >= _MARGIN_X_EVEN]
+                    body_words = [
+                        w for w in words if w["x0"] >= _MARGIN_X_EVEN
+                    ]
                     margin_words = [
-                        w for w in words
+                        w
+                        for w in words
                         if w["x0"] < _MARGIN_X_EVEN
                         and _PAGE_HEADER_BOTTOM < w["top"] < _PAGE_FOOTER_TOP
                     ]
@@ -182,7 +184,9 @@ class Parser:
                         _ART_NUM_WORD_RE.match(w["text"])
                         and art_x_min <= w["x0"] <= art_x_max
                     ):
-                        art_positions.append((w["text"].rstrip("."), w["top"]))
+                        art_positions.append(
+                            (w["text"].rstrip("."), w["top"])
+                        )
 
                 if not art_positions or not margin_words:
                     continue
@@ -195,7 +199,8 @@ class Parser:
                         else page.height
                     )
                     nearby = [
-                        w for w in margin_words
+                        w
+                        for w in margin_words
                         if art_top - 6 <= w["top"] < next_top
                     ]
                     if not nearby:
@@ -225,7 +230,8 @@ class Parser:
                     description = " ".join(
                         " ".join(line) for line in lines if line
                     )
-                    # Strip leading amendment-reference markers, e.g. "45[Title"
+                    # Strip leading amendment-reference markers, e.g.
+                    # "45[Title"
                     description = re.sub(r"^\d+\[", "", description).strip()
                     # Discard footnote references (start with "N -") and
                     # footnote continuations (start with a lowercase letter).
@@ -359,7 +365,7 @@ class Parser:
 
     @staticmethod
     def _collect_page_footnotes(
-        lines: list[tuple[int, str]]
+        lines: list[tuple[int, str]],
     ) -> dict[int, list[Footnote]]:
         """Build {page_number: [Footnote, ...]} from all footnote lines."""
         pool: dict[int, list[Footnote]] = {}
@@ -427,7 +433,8 @@ class Parser:
         # Convert roman numeral to zero-padded decimal, e.g. XVI+A → 016A
         chapter_number = _decimal_chapter_num(numeral, suffix)
 
-        # Collect title lines: everything after the chapter header until first article
+        # Collect title lines: everything after the chapter header until first
+        # article
         title_lines: list[str] = []
         article_start = len(lines)
         for i in range(1, len(lines)):
@@ -489,7 +496,8 @@ class Parser:
         # Resolve marginalia description for this article.
         title = marginalia.get(art_number) or None
 
-        # Content of the first line starts after the matched article-number prefix
+        # Content of the first line starts after the matched article-number
+        # prefix
         first_content = first_line[m.end():].strip()
 
         # Collect content lines, skipping footnote lines (which belong to the
@@ -502,8 +510,12 @@ class Parser:
         # Identify which amendment-reference markers appear in this article's
         # raw text (before stripping brackets) so we can assign the right
         # footnotes from the page pool.
-        raw_with_markers = first_line + " " + " ".join(
-            ln for _, ln in lines[1:] if not _FOOTNOTE_RE.match(ln)
+        raw_with_markers = (
+            first_line
+            + " "
+            + " ".join(
+                ln for _, ln in lines[1:] if not _FOOTNOTE_RE.match(ln)
+            )
         )
         used_markers = set(re.findall(r"(\d+)\[", raw_with_markers))
 
@@ -566,8 +578,10 @@ class Parser:
     # ------------------------------------------------------------------
 
     def parse(self) -> Constitution:
-        pages = self._extract_pages()           # full text: metadata + preamble
-        body_pages = self._extract_body_pages() # cropped: chapters + articles
+        pages = self._extract_pages()  # full text: metadata + preamble
+        body_pages = (
+            self._extract_body_pages()
+        )  # cropped: chapters + articles
         full_text = "\n".join(t for _, t in pages)
         meta = self._parse_metadata(full_text)
         preamble = self._parse_preamble(pages)
@@ -576,7 +590,9 @@ class Parser:
         # full-page text so the number prefix is not cropped out.
         full_cleaned = self._cleaned_lines(pages)
         page_footnotes = self._collect_page_footnotes(full_cleaned)
-        chapters = self._parse_chapters(body_pages, marginalia, page_footnotes)
+        chapters = self._parse_chapters(
+            body_pages, marginalia, page_footnotes
+        )
         return Constitution(
             title=meta["title"],
             edition=meta["edition"],
@@ -676,7 +692,9 @@ def _parse_footnote_lines(lines: list[str]) -> list[Footnote]:
     result: list[Footnote] = []
     for ln in lines:
         if m := re.match(r"^(\d+)\s*[-\u2013]\s*(.+)$", ln):
-            result.append(Footnote(marker=m.group(1), text=m.group(2).strip()))
+            result.append(
+                Footnote(marker=m.group(1), text=m.group(2).strip())
+            )
     return result
 
 

@@ -5,3 +5,4 @@ from lk_constitution.core import (Article, Chapter, Clause, Constitution,
                                   Footnote, LegislativeList,
                                   LegislativeListItem, Preamble, Schedule,
                                   ScheduleItem)
+from lk_constitution.parser import Parser
